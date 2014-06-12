@@ -4,8 +4,6 @@
 #include "hmm.as"
 hmminit 1
 
-#include "open.hsp"
-
 title "One Beat Performer"
 
 screen 0,640,280,0,10,10
@@ -208,10 +206,6 @@ pos 30,4:button "Load",*load
 pos 80,4:button "Save",*save
 
 pos 210,4:button "Visual",*visual
-
-objsize 40,20
-
-pos 260,4:button "? ? ?",*omake
 
 *clocker
 	
@@ -744,46 +738,46 @@ if vis==1 {
 	gsel 1
 	redraw 0
 	if vdice==0 {
-		#include "v00.hsp"
+		#include "visual/v00.hsp"
 	}
 	if vdice==1 {
-		#include "v01.hsp"
+		#include "visual/v01.hsp"
 	}
 	if vdice==2 {
-		#include "v02.hsp"
+		#include "visual/v02.hsp"
 	}
 	if vdice==3 {
-		#include "v03.hsp"
+		#include "visual/v03.hsp"
 	}
 	if vdice==4 {
-		#include "v04.hsp"
+		#include "visual/v04.hsp"
 	}
 	if vdice==5 {
-		#include "v05.hsp"
+		#include "visual/v05.hsp"
 	}
 	if vdice==6 {
-		#include "v06.hsp"
+		#include "visual/v06.hsp"
 	}
 	if vdice==7 {
-		#include "v07.hsp"
+		#include "visual/v07.hsp"
 	}
 	if vdice==8 {
-		#include "v08.hsp"
+		#include "visual/v08.hsp"
 	}
 	if vdice==9 {
-		#include "v09.hsp"
+		#include "visual/v09.hsp"
 	}
 	if vdice==10 {
-		#include "v10.hsp"
+		#include "visual/v10.hsp"
 	}
 	if vdice==11 {
-		#include "v11.hsp"
+		#include "visual/v11.hsp"
 	}
 	if vdice==12 {
-		#include "v12.hsp"
+		#include "visual/v12.hsp"
 	}
 	if vdice==13 {
-		#include "v13.hsp"
+		#include "visual/v13.hsp"
 	}
 }
 
@@ -1406,46 +1400,46 @@ solo=0
 if vis==1 {
 	vdice=rnd(14)
 	if vdice==0 {
-		#include "v00init.hsp"
+		#include "visual/v00init.hsp"
 	}
 	if vdice==1 {
-		#include "v01init.hsp"
+		#include "visual/v01init.hsp"
 	}
 	if vdice==2 {
-		#include "v02init.hsp"
+		#include "visual/v02init.hsp"
 	}
 	if vdice==3 {
-		#include "v03init.hsp"
+		#include "visual/v03init.hsp"
 	}
 	if vdice==4 {
-		#include "v04init.hsp"
+		#include "visual/v04init.hsp"
 	}
 	if vdice==5 {
-		#include "v05init.hsp"
+		#include "visual/v05init.hsp"
 	}
 	if vdice==6 {
-		#include "v06init.hsp"
+		#include "visual/v06init.hsp"
 	}
 	if vdice==7 {
-		#include "v07init.hsp"
+		#include "visual/v07init.hsp"
 	}
 	if vdice==8 {
-		#include "v08init.hsp"
+		#include "visual/v08init.hsp"
 	}
 	if vdice==9 {
-		#include "v09init.hsp"
+		#include "visual/v09init.hsp"
 	}
 	if vdice==10 {
-		#include "v10init.hsp"
+		#include "visual/v10init.hsp"
 	}
 	if vdice==11 {
-		#include "v11init.hsp"
+		#include "visual/v11init.hsp"
 	}
 	if vdice==12 {
-		#include "v12init.hsp"
+		#include "visual/v12init.hsp"
 	}
 	if vdice==13 {
-		#include "v13init.hsp"
+		#include "visual/v13init.hsp"
 	}
 }
 
@@ -1857,6 +1851,3 @@ goto *clocker
 		}
 	}
 	goto *clocker
-	
-*omake
-	#include "myst.hsp"
