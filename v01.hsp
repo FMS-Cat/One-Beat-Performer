@@ -1,0 +1,27 @@
+v01f=v01f*0.82
+v01clr=v01clr/1.04
+color v01clr*0.1,0,0:boxf 0,0,639,39:boxf 0,440,639,479
+color v01clr*0.2,0,0:boxf 0,40,639,79:boxf 0,400,639,439
+color v01clr*0.3,0,0:boxf 0,80,639,119:boxf 0,360,639,399
+color v01clr*0.4,0,0:boxf 0,120,639,159:boxf 0,320,639,359
+color v01clr*0.5,0,0:boxf 0,160,639,199:boxf 0,280,639,319
+color v01clr*0.6,0,0:boxf 0,200,639,239:boxf 0,240,639,279
+
+v01t=v01t*0.82
+v01x=0.0
+v01p=v01t
+*v01rep
+color 127,63,63
+boxf 640-v01x,238-sin(v01p)*120,640-v01x,242-sin(v01p)*120
+color 255,127,127
+boxf 640-v01x,239-sin(v01p)*120,640-v01x,241-sin(v01p)*120
+color 255,255,255
+boxf 640-v01x,240-sin(v01p)*120,640-v01x,240-sin(v01p)*120
+v01p=v01p+v01f
+v01x=v01x+1
+if v01x>=640 {
+	goto *v01end
+}
+goto *v01rep
+
+*v01end

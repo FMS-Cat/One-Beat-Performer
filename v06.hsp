@@ -1,0 +1,30 @@
+color 0,0,0
+boxf
+
+v06exp=v06exp*0.9
+
+color v06ar*0.4,v06ag*0.4,v06ab*0.4:boxf 20+10+v06exp,20+10+v06exp,140-v06exp,140-v06exp
+color v06br*0.4,v06bg*0.4,v06bb*0.4:boxf 180+10+v06exp,20+10+v06exp,300-v06exp,140-v06exp
+color v06cr*0.4,v06cg*0.4,v06cb*0.4:boxf 340+10+v06exp,20+10+v06exp,460-v06exp,140-v06exp
+color v06dr*0.4,v06dg*0.4,v06db*0.4:boxf 500+10+v06exp,20+10+v06exp,620-v06exp,140-v06exp
+color v06er*0.4,v06eg*0.4,v06eb*0.4:boxf 20+10+v06exp,180+10+v06exp,140-v06exp,300-v06exp
+color v06fr*0.4,v06fg*0.4,v06fb*0.4:boxf 180+10+v06exp,180+10+v06exp,300-v06exp,300-v06exp
+color v06gr*0.4,v06gg*0.4,v06gb*0.4:boxf 340+10+v06exp,180+10+v06exp,460-v06exp,300-v06exp
+color v06hr*0.4,v06hg*0.4,v06hb*0.4:boxf 500+10+v06exp,180+10+v06exp,620-v06exp,300-v06exp
+color v06ir*0.4,v06ig*0.4,v06ib*0.4:boxf 20+10+v06exp,340+10+v06exp,140-v06exp,460-v06exp
+color v06jr*0.4,v06jg*0.4,v06jb*0.4:boxf 180+10+v06exp,340+10+v06exp,300-v06exp,460-v06exp
+color v06kr*0.4,v06kg*0.4,v06kb*0.4:boxf 340+10+v06exp,340+10+v06exp,460-v06exp,460-v06exp
+color v06lr*0.4,v06lg*0.4,v06lb*0.4:boxf 500+10+v06exp,340+10+v06exp,620-v06exp,460-v06exp
+
+color v06ar,v06ag,v06ab:boxf 20+v06exp,20+v06exp,140-10-v06exp,140-10-v06exp
+color v06br,v06bg,v06bb:boxf 180+v06exp,20+v06exp,300-10-v06exp,140-10-v06exp
+color v06cr,v06cg,v06cb:boxf 340+v06exp,20+v06exp,460-10-v06exp,140-10-v06exp
+color v06dr,v06dg,v06db:boxf 500+v06exp,20+v06exp,620-10-v06exp,140-10-v06exp
+color v06er,v06eg,v06eb:boxf 20+v06exp,180+v06exp,140-10-v06exp,300-10-v06exp
+color v06fr,v06fg,v06fb:boxf 180+v06exp,180+v06exp,300-10-v06exp,300-10-v06exp
+color v06gr,v06gg,v06gb:boxf 340+v06exp,180+v06exp,460-10-v06exp,300-10-v06exp
+color v06hr,v06hg,v06hb:boxf 500+v06exp,180+v06exp,620-10-v06exp,300-10-v06exp
+color v06ir,v06ig,v06ib:boxf 20+v06exp,340+v06exp,140-10-v06exp,460-10-v06exp
+color v06jr,v06jg,v06jb:boxf 180+v06exp,340+v06exp,300-10-v06exp,460-10-v06exp
+color v06kr,v06kg,v06kb:boxf 340+v06exp,340+v06exp,460-10-v06exp,460-10-v06exp
+color v06lr,v06lg,v06lb:boxf 500+v06exp,340+v06exp,620-10-v06exp,460-10-v06exp

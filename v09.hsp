@@ -1,0 +1,95 @@
+v09a=v09a
+
+color 0,0,0
+boxf
+
+v09t1=v09t1+v09a
+if v09t1>=m_pi/16 {
+	v09t1=0.0
+}
+v09t=v09t1
+gosub *v09vis
+
+v09t2=v09t2+v09a
+if v09t2>=m_pi/16*2 {
+	v09t2=m_pi/16
+}
+v09t=v09t2
+gosub *v09vis
+
+v09t3=v09t3+v09a
+if v09t3>=m_pi/16*3 {
+	v09t3=m_pi/16*2
+}
+v09t=v09t3
+gosub *v09vis
+
+v09t4=v09t4+v09a
+if v09t4>=m_pi/16*4 {
+	v09t4=m_pi/16*3
+}
+v09t=v09t4
+gosub *v09vis
+
+v09t5=v09t5+v09a
+if v09t5>=m_pi/16*5 {
+	v09t5=m_pi/16*4
+}
+v09t=v09t5
+gosub *v09vis
+
+v09t6=v09t6+v09a
+if v09t6>=m_pi/16*6 {
+	v09t6=m_pi/16*5
+}
+v09t=v09t6
+gosub *v09vis
+
+v09t7=v09t7+v09a
+if v09t7>=m_pi/16*7 {
+	v09t7=m_pi/16*6
+}
+v09t=v09t7
+gosub *v09vis
+
+v09t8=v09t8+v09a
+if v09t8>=m_pi/16*8 {
+	v09t8=m_pi/16*7
+}
+v09t=v09t8
+gosub *v09vis
+
+goto *v09thru
+
+*v09vis
+color v09t*2*255/m_pi,			v09t*2*255/m_pi,		v09t*2*255/m_pi
+
+if v09sw==1 {
+	
+	line 640-sin(v09t+v09r)*642,	cos(v09t+v09r)*150,		640-sin(v09t+v09r)*642,		480-cos(v09t+v09r)*210
+	line 800-sin(v09t*1.7)*320,		cos(v09t)*210,			800-sin(v09t*1.7)*320,		480-cos(v09t)*150
+	line 640-sin(v09t)*642,			cos(v09t)*150,			800-sin(v09t*1.7)*320,		cos(v09t)*210
+	line 640-sin(v09t)*642,			480-cos(v09t)*210,		800-sin(v09t*1.7)*320,		480-cos(v09t)*150
+	
+	line 640-sin(v09t)*642,			cos(v09t)*150,			640-sin(v09t+m_pi/16)*642,		cos(v09t+m_pi/16)*150
+	line 640-sin(v09t)*642,			480-cos(v09t)*210+2,	640-sin(v09t+m_pi/16)*642,		480-cos(v09t+m_pi/16)*210
+	line 800-sin(v09t*1.7)*320,		cos(v09t)*210,			800-sin((v09t+m_pi/16)*1.7)*320,	cos(v09t+m_pi/16)*210
+	line 800-sin(v09t*1.7)*320,		480-cos(v09t)*150,		800-sin((v09t+m_pi/16)*1.7)*320,	480-cos(v09t+m_pi/16)*150
+	
+} else {
+	
+	line sin(v09t+v09r)*642,		480-cos(v09t+v09r)*150,	sin(v09t+v09r)*642,			cos(v09t+v09r)*210
+	line -160+sin(v09t*1.7)*320,	480-cos(v09t)*210,		-160+sin(v09t*1.7)*320,		cos(v09t)*150
+	line sin(v09t)*642,				480-cos(v09t)*150,		-160+sin(v09t*1.7)*320,		480-cos(v09t)*210
+	line sin(v09t)*642,				cos(v09t)*210,			-160+sin(v09t*1.7)*320,		cos(v09t)*150
+	
+	line sin(v09t)*642,				480-cos(v09t)*150,		sin(v09t+m_pi/16)*642,		480-cos(v09t+m_pi/16)*150
+	line sin(v09t)*642,				cos(v09t)*210+2,		sin(v09t+m_pi/16)*642,		cos(v09t+m_pi/16)*210
+	line -160+sin(v09t*1.7)*320,	480-cos(v09t)*210,		-160+sin((v09t+m_pi/16)*1.7)*320,	480-cos(v09t+m_pi/16)*210
+	line -160+sin(v09t*1.7)*320,	cos(v09t)*150,			-160+sin((v09t+m_pi/16)*1.7)*320,	cos(v09t+m_pi/16)*150
+	
+}
+
+return
+
+*v09thru

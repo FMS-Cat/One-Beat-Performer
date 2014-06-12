@@ -1,0 +1,31 @@
+randomize
+
+repeat 90
+v12r(cnt)=0.1*rnd(100)
+loop
+v12r(90)=v12r(0)
+
+v12dec=v12dec*0.9
+
+color 0,0,0
+boxf
+
+v12re=255.0
+
+*v12rep
+
+color 255,v12re,v12re
+
+repeat 90
+line 320.0+sin(v12f(cnt))*(v12ir+v12r(cnt)*v12dec+v12re*v12mul),240.0+cos(v12f(cnt))*(v12ir+v12r(cnt)*v12dec+v12re*v12mul),320.0+sin(v12f(cnt+1))*(v12ir+v12r(cnt+1)*v12dec+v12re*v12mul),240.0+cos(v12f(cnt+1))*(v12ir+v12r(cnt+1)*v12dec+v12re*v12mul)
+loop
+
+v12re=v12re-32
+
+if v12re<=20.0 {
+	goto *v12end
+}
+
+goto *v12rep
+
+*v12end

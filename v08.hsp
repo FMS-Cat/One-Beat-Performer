@@ -1,0 +1,25 @@
+v08clr=v08clr+0.16
+v08x=0.0
+v08y=0.0
+
+*v08ry
+*v08rx
+if v08sw==1 {
+	color 100+sin(v08clr+v08y*0.8)*100,0,50+sin(v08clr+v08y*0.8+0.7)*50:boxf 0-v08x*20+v08y*20,0+v08x*20,19-v08x*20+v08y*20,19+v08x*20
+} else {
+	color 100+sin(v08clr+v08y*0.8)*100,0,50+sin(v08clr+v08y*0.8+0.7)*50:boxf 620+v08x*20-v08y*20,0+v08x*20,639+v08x*20-v08y*20,19+v08x*20
+}
+v08x=v08x+1
+if v08x==24 {
+	goto *v08nex
+}
+goto *v08rx
+*v08nex
+v08x=0
+v08y=v08y+1
+if v08y==55 {
+	goto *v08end
+}
+goto *v08ry
+
+*v08end

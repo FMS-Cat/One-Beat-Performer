@@ -1,0 +1,26 @@
+v06exp=40.0
+
+randomize
+
+gosub *v06inclr:v06ar=v06inr:v06ag=v06ing:v06ab=v06inb
+gosub *v06inclr:v06br=v06inr:v06bg=v06ing:v06bb=v06inb
+gosub *v06inclr:v06cr=v06inr:v06cg=v06ing:v06cb=v06inb
+gosub *v06inclr:v06dr=v06inr:v06dg=v06ing:v06db=v06inb
+gosub *v06inclr:v06er=v06inr:v06eg=v06ing:v06eb=v06inb
+gosub *v06inclr:v06fr=v06inr:v06fg=v06ing:v06fb=v06inb
+gosub *v06inclr:v06gr=v06inr:v06gg=v06ing:v06gb=v06inb
+gosub *v06inclr:v06hr=v06inr:v06hg=v06ing:v06hb=v06inb
+gosub *v06inclr:v06ir=v06inr:v06ig=v06ing:v06ib=v06inb
+gosub *v06inclr:v06jr=v06inr:v06jg=v06ing:v06jb=v06inb
+gosub *v06inclr:v06kr=v06inr:v06kg=v06ing:v06kb=v06inb
+gosub *v06inclr:v06lr=v06inr:v06lg=v06ing:v06lb=v06inb
+
+goto *v06thru
+
+*v06inclr
+	v06inr=200.0+rnd(56)
+	v06ing=0.0
+	v06inb=50.0+rnd(100)
+	return
+	
+*v06thru

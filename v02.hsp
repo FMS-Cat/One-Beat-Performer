@@ -1,0 +1,54 @@
+v02col=v02col+0.15
+v02dec=v02dec*0.95
+v02a=v02a*0.92+0.05
+
+color (75.0-cos(v02col)*75)*v02dec,0,(25.0-cos(v02col)*25)*v02dec
+boxf 0,0,640,79
+color (75.0-cos(v02col+0.2)*75)*v02dec,0,(25.0-cos(v02col)*25)*v02dec
+boxf 0,80,640,159
+color (75.0-cos(v02col+0.4)*75)*v02dec,0,(25.0-cos(v02col)*25)*v02dec
+boxf 0,160,640,239
+color (75.0-cos(v02col+0.6)*75)*v02dec,0,(25.0-cos(v02col)*25)*v02dec
+boxf 0,240,640,319
+color (75.0-cos(v02col+0.8)*75)*v02dec,0,(25.0-cos(v02col)*25)*v02dec
+boxf 0,320,640,399
+color (75.0-cos(v02col+1.0)*75)*v02dec,0,(25.0-cos(v02col)*25)*v02dec
+boxf 0,400,640,479
+
+v02t1=v02t1+0.0077*v02a
+v02t2=v02t2+0.0097*v02a
+v02t3=v02t3+0.0087*v02a
+v02t4=v02t4+0.0067*v02a
+
+color 63,63,63:v02t=v02t1-0.05:gosub *v02tri
+color 63,63,63:v02t=v02t2-0.05:gosub *v02tri
+color 63,63,63:v02t=v02t3-0.05:gosub *v02tri
+color 63,63,63:v02t=v02t4-0.05:gosub *v02tri
+color 127,127,127:v02t=v02t1-0.025:gosub *v02tri
+color 127,127,127:v02t=v02t2-0.025:gosub *v02tri
+color 127,127,127:v02t=v02t3-0.025:gosub *v02tri
+color 127,127,127:v02t=v02t4-0.025:gosub *v02tri
+color 255,255,255:v02t=v02t1:gosub *v02tri
+color 255,255,255:v02t=v02t2:gosub *v02tri
+color 255,255,255:v02t=v02t3:gosub *v02tri
+color 255,255,255:v02t=v02t4:gosub *v02tri
+goto *v02end
+
+*v02tri
+v02ax=320+sin(v02t*2.02)*230
+v02ay=240+cos(v02t*1.76)*179
+v02bx=320+sin(v02t*1.43+4)*202
+v02by=240+cos(v02t*1.77+4)*156
+v02cx=320+sin(v02t*1.46+2)*147
+v02cy=240+cos(v02t*2.32+2)*102
+repeat 1
+line v02ax,v02ay+cnt,v02bx,v02by+cnt
+line v02bx,v02by+cnt,v02cx,v02cy+cnt
+line v02cx,v02cy+cnt,v02ax,v02ay+cnt
+circle v02ax-3,v02ay-3,v02ax+3,v02ay+3
+circle v02bx-3,v02by-3,v02bx+3,v02by+3
+circle v02cx-3,v02cy-3,v02cx+3,v02cy+3
+loop
+return
+
+*v02end

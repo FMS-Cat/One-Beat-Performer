@@ -1,0 +1,80 @@
+screen 0
+buffer 1
+picload "myst.gif"
+gsel 0
+
+mojivj=400.0
+
+*myst
+redraw 0
+
+bgt=-1.4+bgt
+repeat 1200
+bgh=cnt\40
+bgv=cnt/40
+bgk=sqrt(powf(absf(0.0+bgh-19.5),2)+powf(absf(0.0+bgv-14.5),2))*1.5
+bgr=127+sin(bgk+bgt)*127
+bgg=127+sin(bgk+bgt+m_pi/2*3)*127
+bgb=127+sin(bgk+bgt+m_pi/4*3)*127
+color bgr,bgg,bgb
+boxf bgh*16,bgv*16,(bgh+1)*16,(bgv+1)*16
+loop
+
+mystv=0.1+mystv
+mysth=0.072+mysth
+mystz=0.081+mystz
+mystr=0.123+mystr
+color 0,255,0
+repeat 5
+pos 320+sin(mysth+0.1*cnt)*160,200+sin(mystv+0.1*cnt)*40
+gmode 4,460,290,96+cnt*40
+grotate 1,0,0,sin(mystr+0.1*cnt)*0.3,460+sin(mystz+0.1*cnt)*100,290+cos(mystz+0.1*cnt)*100
+loop
+
+kuriboh=240-5+rnd(10)
+kuribov=300-5+rnd(10)
+kuriboc=0.1+kuriboc
+color 127,31,0+80+sin(kuriboc)*80
+boxf 60+kuriboh,0+kuribov,99+kuriboh,9+kuribov
+boxf 50+kuriboh,10+kuribov,109+kuriboh,19+kuribov
+boxf 40+kuriboh,20+kuribov,119+kuriboh,29+kuribov
+boxf 30+kuriboh,30+kuribov,129+kuriboh,39+kuribov
+boxf 20+kuriboh,40+kuribov,139+kuriboh,49+kuribov
+boxf 10+kuriboh,50+kuribov,149+kuriboh,109+kuribov
+boxf 0+kuriboh,70+kuribov,159+kuriboh,99+kuribov
+color 255,191+sin(kuriboc)*40,95
+boxf 50+kuriboh,100+kuribov,109+kuriboh,139+kuribov
+boxf 40+kuriboh,110+kuribov,119+kuriboh,129+kuribov
+boxf 60+kuriboh,140+kuribov,99+kuriboh,149+kuribov
+boxf 40+kuriboh,50+kuribov,59+kuriboh,89+kuribov
+boxf 60+kuriboh,70+kuribov,69+kuriboh,89+kuribov
+boxf 100+kuriboh,50+kuribov,119+kuriboh,89+kuribov
+boxf 90+kuriboh,70+kuribov,99+kuriboh,89+kuribov
+color 0+120+sin(kuriboc)*120,0,0
+boxf 30+kuriboh,40+kuribov,49+kuriboh,49+kuribov
+boxf 110+kuriboh,40+kuribov,129+kuriboh,49+kuribov
+boxf 50+kuriboh,50+kuribov,59+kuriboh,79+kuribov
+boxf 100+kuriboh,50+kuribov,109+kuriboh,79+kuribov
+boxf 50+kuriboh,60+kuribov,109+kuriboh,69+kuribov
+boxf 30+kuriboh,130+kuribov,49+kuriboh,139+kuribov
+boxf 30+kuriboh,140+kuribov,59+kuriboh,149+kuribov
+boxf 40+kuriboh,150+kuribov,69+kuriboh,159+kuribov
+boxf 120+kuriboh,120+kuribov,139+kuriboh,159+kuribov
+boxf 110+kuriboh,130+kuribov,149+kuriboh,149+kuribov
+boxf 90+kuriboh,150+kuribov,139+kuriboh,159+kuribov
+boxf 100+kuriboh,140+kuribov,139+kuriboh,159+kuribov
+
+mojivj=mojivj*0.9
+mojih=0.11+mojih
+pos 24+sin(mojih)*30,24+mojivj
+color 255,255,255
+font "HGP‘n‰pŠpÎß¯Ìß‘Ì",61
+mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚µ‚½"
+pos 20+sin(mojih)*30,20+mojivj
+color 0,0,0
+font "HGP‘n‰pŠpÎß¯Ìß‘Ì",61
+mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚µ‚½"
+
+redraw 1
+await 10
+goto *myst

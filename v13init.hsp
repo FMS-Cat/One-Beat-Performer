@@ -1,0 +1,9 @@
+randomize
+repeat 48
+v13clr(cnt)=50+rnd(206)
+v13r(cnt)=20+cnt
+v13x(cnt)=-100.0+rnd(840)
+v13y(cnt)=-100.0+rnd(680)
+loop
+v13a=8.0
+v13sw=(v13sw+1)\2

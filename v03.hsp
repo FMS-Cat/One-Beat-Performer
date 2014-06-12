@@ -1,0 +1,48 @@
+v03a=v03a/1.07
+v03r=v03r+v03a+0.01
+v03ax=80+sin(v03r)*45
+v03ay=30+cos(v03r)*7
+v03bx=80+sin(v03r+m_pi*0.5)*45
+v03by=30+cos(v03r+m_pi*0.5)*7
+v03cx=80+sin(v03r+m_pi)*45
+v03cy=30+cos(v03r+m_pi)*7
+v03dx=80+sin(v03r+m_pi*1.5)*45
+v03dy=30+cos(v03r+m_pi*1.5)*7
+v03ex=80+sin(v03r)*45
+v03ey=90+cos(v03r)*7
+v03fx=80+sin(v03r+m_pi*0.5)*45
+v03fy=90+cos(v03r+m_pi*0.5)*7
+v03gx=80+sin(v03r+m_pi)*45
+v03gy=90+cos(v03r+m_pi)*7
+v03hx=80+sin(v03r+m_pi*1.5)*45
+v03hy=90+cos(v03r+m_pi*1.5)*7
+
+color 0,0,0
+boxf
+
+v03clr=v03clr*0.97
+v03rep=0.0
+*v03v
+repeat 4
+v03re=cnt*160
+color 255,255-v03clr,255-v03clr
+line v03ax+v03re,v03ay+v03rep,v03bx+v03re,v03by+v03rep
+line v03bx+v03re,v03by+v03rep,v03cx+v03re,v03cy+v03rep
+line v03cx+v03re,v03cy+v03rep,v03dx+v03re,v03dy+v03rep
+line v03dx+v03re,v03dy+v03rep,v03ax+v03re,v03ay+v03rep
+line v03ex+v03re,v03ey+v03rep,v03fx+v03re,v03fy+v03rep
+line v03fx+v03re,v03fy+v03rep,v03gx+v03re,v03gy+v03rep
+line v03gx+v03re,v03gy+v03rep,v03hx+v03re,v03hy+v03rep
+line v03hx+v03re,v03hy+v03rep,v03ex+v03re,v03ey+v03rep
+line v03ax+v03re,v03ay+v03rep,v03ex+v03re,v03ey+v03rep
+line v03bx+v03re,v03by+v03rep,v03fx+v03re,v03fy+v03rep
+line v03cx+v03re,v03cy+v03rep,v03gx+v03re,v03gy+v03rep
+line v03dx+v03re,v03dy+v03rep,v03hx+v03re,v03hy+v03rep
+loop
+v03rep=v03rep+120
+if v03rep>=480 {
+	goto *v03end
+}
+goto *v03v
+
+*v03end

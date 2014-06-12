@@ -1,0 +1,118 @@
+v07sp0=v07sp0*0.94
+v07sp1=v07sp1*0.94
+v07sp2=v07sp2*0.94
+v07sp3=v07sp3*0.94
+v07sp4=v07sp4*0.94
+v07sp5=v07sp5*0.94
+v07sp6=v07sp6*0.94
+
+v07clr=v07clr*0.97
+
+v07sp0=v07sp0+1
+v07sp1=v07sp1+1
+v07sp2=v07sp2+1
+v07sp3=v07sp3+1
+v07sp4=v07sp4+1
+v07sp5=v07sp5+1
+v07sp6=v07sp6+1
+
+v07t=v07t+0.01
+
+color v07clr*3,0,v07clr
+boxf
+
+color 255,255,255
+
+circle 320+sin(v07t)*v07ar*v07sp0-2,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0-2,320+sin(v07t)*v07ar*v07sp0+2,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0+3
+
+circle 320+sin(v07t+m_pi/6*0)*v07br*v07sp1-2,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1-2,320+sin(v07t+m_pi/6*0)*v07br*v07sp1+2,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1+3
+circle 320+sin(v07t+m_pi/6*2)*v07br*v07sp2-2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2-2,320+sin(v07t+m_pi/6*2)*v07br*v07sp2+2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2+3
+circle 320+sin(v07t+m_pi/6*4)*v07br*v07sp3-2,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3-2,320+sin(v07t+m_pi/6*4)*v07br*v07sp3+2,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3+3
+circle 320+sin(v07t+m_pi/6*6)*v07br*v07sp1-2,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1-2,320+sin(v07t+m_pi/6*6)*v07br*v07sp1+2,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1+3
+circle 320+sin(v07t+m_pi/6*8)*v07br*v07sp2-2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2-2,320+sin(v07t+m_pi/6*8)*v07br*v07sp2+2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2+3
+circle 320+sin(v07t+m_pi/6*10)*v07br*v07sp3-2,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3-2,320+sin(v07t+m_pi/6*10)*v07br*v07sp3+2,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3+3
+
+circle 320+sin(v07t+m_pi/6*1)*v07cr*v07sp4-2,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4-2,320+sin(v07t+m_pi/6*1)*v07cr*v07sp4+2,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4+3
+circle 320+sin(v07t+m_pi/6*3)*v07cr*v07sp5-2,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5-2,320+sin(v07t+m_pi/6*3)*v07cr*v07sp5+2,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5+3
+circle 320+sin(v07t+m_pi/6*5)*v07cr*v07sp6-2,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6-2,320+sin(v07t+m_pi/6*5)*v07cr*v07sp6+2,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6+3
+circle 320+sin(v07t+m_pi/6*7)*v07cr*v07sp4-2,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4-2,320+sin(v07t+m_pi/6*7)*v07cr*v07sp4+2,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4+3
+circle 320+sin(v07t+m_pi/6*9)*v07cr*v07sp5-2,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5-2,320+sin(v07t+m_pi/6*9)*v07cr*v07sp5+2,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5+3
+circle 320+sin(v07t+m_pi/6*11)*v07cr*v07sp6-2,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6-2,320+sin(v07t+m_pi/6*11)*v07cr*v07sp6+2,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6+3
+
+circle 320+sin(v07t+m_pi/6*0)*v07dr*v07sp1-2,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1-2,320+sin(v07t+m_pi/6*0)*v07dr*v07sp1+2,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1+3
+circle 320+sin(v07t+m_pi/6*2)*v07dr*v07sp2-2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2-2,320+sin(v07t+m_pi/6*2)*v07dr*v07sp2+2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2+3
+circle 320+sin(v07t+m_pi/6*4)*v07dr*v07sp3-2,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3-2,320+sin(v07t+m_pi/6*4)*v07dr*v07sp3+2,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3+3
+circle 320+sin(v07t+m_pi/6*6)*v07dr*v07sp1-2,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1-2,320+sin(v07t+m_pi/6*6)*v07dr*v07sp1+2,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1+3
+circle 320+sin(v07t+m_pi/6*8)*v07dr*v07sp2-2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2-2,320+sin(v07t+m_pi/6*8)*v07dr*v07sp2+2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2+3
+circle 320+sin(v07t+m_pi/6*10)*v07dr*v07sp3-2,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3-2,320+sin(v07t+m_pi/6*10)*v07dr*v07sp3+2,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3+3
+
+circle 320+sin(v07t)*v07er*v07sp0-2,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0-2,320+sin(v07t)*v07er*v07sp0+2,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0+3
+
+line 320+sin(v07t)*v07ar*v07sp0,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0,320+sin(v07t+m_pi/6*0)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1
+line 320+sin(v07t)*v07ar*v07sp0,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0,320+sin(v07t+m_pi/6*2)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2
+line 320+sin(v07t)*v07ar*v07sp0,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0,320+sin(v07t+m_pi/6*4)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3
+line 320+sin(v07t)*v07ar*v07sp0,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0,320+sin(v07t+m_pi/6*6)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1
+line 320+sin(v07t)*v07ar*v07sp0,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0,320+sin(v07t+m_pi/6*8)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2
+line 320+sin(v07t)*v07ar*v07sp0,240-(v07ah+cos(v07t)*v07ar*v07di)*v07sp0,320+sin(v07t+m_pi/6*10)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3
+
+line 320+sin(v07t)*v07er*v07sp0,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0,320+sin(v07t+m_pi/6*0)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1
+line 320+sin(v07t)*v07er*v07sp0,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0,320+sin(v07t+m_pi/6*2)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2
+line 320+sin(v07t)*v07er*v07sp0,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0,320+sin(v07t+m_pi/6*4)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3
+line 320+sin(v07t)*v07er*v07sp0,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0,320+sin(v07t+m_pi/6*6)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1
+line 320+sin(v07t)*v07er*v07sp0,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0,320+sin(v07t+m_pi/6*8)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2
+line 320+sin(v07t)*v07er*v07sp0,240-(v07eh+cos(v07t)*v07er*v07di)*v07sp0,320+sin(v07t+m_pi/6*10)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3
+
+line 320+sin(v07t+m_pi/6*0)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1,320+sin(v07t+m_pi/6*11)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*0)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1,320+sin(v07t+m_pi/6*1)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*2)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2,320+sin(v07t+m_pi/6*1)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*2)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2,320+sin(v07t+m_pi/6*3)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*4)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3,320+sin(v07t+m_pi/6*3)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*4)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3,320+sin(v07t+m_pi/6*5)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*6)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1,320+sin(v07t+m_pi/6*5)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*6)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1,320+sin(v07t+m_pi/6*7)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*8)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2,320+sin(v07t+m_pi/6*7)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*8)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2,320+sin(v07t+m_pi/6*9)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*10)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3,320+sin(v07t+m_pi/6*9)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*10)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3,320+sin(v07t+m_pi/6*11)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6
+
+line 320+sin(v07t+m_pi/6*0)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1,320+sin(v07t+m_pi/6*11)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*0)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1,320+sin(v07t+m_pi/6*1)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*2)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2,320+sin(v07t+m_pi/6*1)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*2)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2,320+sin(v07t+m_pi/6*3)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*4)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3,320+sin(v07t+m_pi/6*3)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*4)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3,320+sin(v07t+m_pi/6*5)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*6)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1,320+sin(v07t+m_pi/6*5)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*6)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1,320+sin(v07t+m_pi/6*7)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*8)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2,320+sin(v07t+m_pi/6*7)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*8)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2,320+sin(v07t+m_pi/6*9)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*10)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3,320+sin(v07t+m_pi/6*9)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*10)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3,320+sin(v07t+m_pi/6*11)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6
+
+line 320+sin(v07t+m_pi/6*0)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1,320+sin(v07t+m_pi/6*2)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2
+line 320+sin(v07t+m_pi/6*2)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*2)*v07br*v07di)*v07sp2,320+sin(v07t+m_pi/6*4)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3
+line 320+sin(v07t+m_pi/6*4)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*4)*v07br*v07di)*v07sp3,320+sin(v07t+m_pi/6*6)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1
+line 320+sin(v07t+m_pi/6*6)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*6)*v07br*v07di)*v07sp1,320+sin(v07t+m_pi/6*8)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2
+line 320+sin(v07t+m_pi/6*8)*v07br*v07sp2,240-(v07bh+cos(v07t+m_pi/6*8)*v07br*v07di)*v07sp2,320+sin(v07t+m_pi/6*10)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3
+line 320+sin(v07t+m_pi/6*10)*v07br*v07sp3,240-(v07bh+cos(v07t+m_pi/6*10)*v07br*v07di)*v07sp3,320+sin(v07t+m_pi/6*0)*v07br*v07sp1,240-(v07bh+cos(v07t+m_pi/6*0)*v07br*v07di)*v07sp1
+
+line 320+sin(v07t+m_pi/6*0)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1,320+sin(v07t+m_pi/6*2)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2
+line 320+sin(v07t+m_pi/6*2)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*2)*v07dr*v07di)*v07sp2,320+sin(v07t+m_pi/6*4)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3
+line 320+sin(v07t+m_pi/6*4)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*4)*v07dr*v07di)*v07sp3,320+sin(v07t+m_pi/6*6)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1
+line 320+sin(v07t+m_pi/6*6)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*6)*v07dr*v07di)*v07sp1,320+sin(v07t+m_pi/6*8)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2
+line 320+sin(v07t+m_pi/6*8)*v07dr*v07sp2,240-(v07dh+cos(v07t+m_pi/6*8)*v07dr*v07di)*v07sp2,320+sin(v07t+m_pi/6*10)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3
+line 320+sin(v07t+m_pi/6*10)*v07dr*v07sp3,240-(v07dh+cos(v07t+m_pi/6*10)*v07dr*v07di)*v07sp3,320+sin(v07t+m_pi/6*0)*v07dr*v07sp1,240-(v07dh+cos(v07t+m_pi/6*0)*v07dr*v07di)*v07sp1
+
+line 320+sin(v07t+m_pi/6*1)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4,320+sin(v07t+m_pi/6*3)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*3)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*3)*v07cr*v07di)*v07sp5,320+sin(v07t+m_pi/6*5)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*5)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*5)*v07cr*v07di)*v07sp6,320+sin(v07t+m_pi/6*7)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4
+line 320+sin(v07t+m_pi/6*7)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*7)*v07cr*v07di)*v07sp4,320+sin(v07t+m_pi/6*9)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5
+line 320+sin(v07t+m_pi/6*9)*v07cr*v07sp5,240-(v07ch+cos(v07t+m_pi/6*9)*v07cr*v07di)*v07sp5,320+sin(v07t+m_pi/6*11)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6
+line 320+sin(v07t+m_pi/6*11)*v07cr*v07sp6,240-(v07ch+cos(v07t+m_pi/6*11)*v07cr*v07di)*v07sp6,320+sin(v07t+m_pi/6*1)*v07cr*v07sp4,240-(v07ch+cos(v07t+m_pi/6*1)*v07cr*v07di)*v07sp4
+
+v07sp0=v07sp0-1
+v07sp1=v07sp1-1
+v07sp2=v07sp2-1
+v07sp3=v07sp3-1
+v07sp4=v07sp4-1
+v07sp5=v07sp5-1
+v07sp6=v07sp6-1

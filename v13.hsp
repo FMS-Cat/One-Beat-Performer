@@ -1,0 +1,34 @@
+v13a=v13a*0.9
+redraw 0
+color 0,0,0
+boxf
+repeat 48
+
+if v13sw==1 {
+	v13y(cnt)=0.16*v13r(cnt)*v13a+v13y(cnt)
+	if v13y(cnt)>=580.0 {
+		v13y(cnt)=-100.0
+	}
+	v13x(cnt)=0.06*v13r(cnt)*v13a+v13x(cnt)
+	if v13x(cnt)>=840.0 {
+		v13x(cnt)=-100.0
+	}
+} else {
+	v13y(cnt)=0.16*v13r(cnt)*v13a+v13y(cnt)
+	if v13y(cnt)>=580.0 {
+		v13y(cnt)=-100.0
+	}
+	v13x(cnt)=-0.06*v13r(cnt)*v13a+v13x(cnt)
+	if v13x(cnt)<=-100.0 {
+		v13x(cnt)=840.0
+	}
+}
+
+color 255,0,102
+circle v13x(cnt)-v13r(cnt)-4,v13y(cnt)-v13r(cnt)-4,v13x(cnt)+v13r(cnt)+4,v13y(cnt)+v13r(cnt)+4
+color 0,0,0
+circle v13x(cnt)-v13r(cnt),v13y(cnt)-v13r(cnt),v13x(cnt)+v13r(cnt),v13y(cnt)+v13r(cnt)
+
+loop
+await 10
+redraw 1

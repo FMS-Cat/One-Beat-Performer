@@ -1,0 +1,1862 @@
+; ver 20140525
+
+#include "winmm.as"
+#include "hmm.as"
+hmminit 1
+
+#include "open.hsp"
+
+title "One Beat Performer"
+
+screen 0,640,280,0,10,10
+
+s48="":s49="":s50="":s51="":s52="":s53="":s54="":s55="":s56="":s57="":s65="":s66="":s67="":s68="":s69="":s70="":s71="":s72="":s73="":s74="":s75="":s76="":s77="":s78="":s79="":s80="":s81="":s82="":s83="":s84="":s85="":s86="":s87="":s88="":s89="":s90=""
+c48=0:c49=0:c50=0:c51=0:c52=0:c53=0:c54=0:c55=0:c56=0:c57=0:c65=0:c66=0:c67=0:c68=0:c69=0:c70=0:c71=0:c72=0:c73=0:c74=0:c75=0:c76=0:c77=0:c78=0:c79=0:c80=0:c81=0:c82=0:c83=0:c84=0:c85=0:c86=0:c87=0:c88=0:c89=0:c90=0
+p48=0:p49=0:p50=0:p51=0:p52=0:p53=0:p54=0:p55=0:p56=0:p57=0:p65=0:p66=0:p67=0:p68=0:p69=0:p70=0:p71=0:p72=0:p73=0:p74=0:p75=0:p76=0:p77=0:p78=0:p79=0:p80=0:p81=0:p82=0:p83=0:p84=0:p85=0:p86=0:p87=0:p88=0:p89=0:p90=0
+b48=0:b49=0:b50=0:b51=0:b52=0:b53=0:b54=0:b55=0:b56=0:b57=0:b65=0:b66=0:b67=0:b68=0:b69=0:b70=0:b71=0:b72=0:b73=0:b74=0:b75=0:b76=0:b77=0:b78=0:b79=0:b80=0:b81=0:b82=0:b83=0:b84=0:b85=0:b86=0:b87=0:b88=0:b89=0:b90=0
+so48=0:so49=0:so50=0:so51=0:so52=0:so53=0:so54=0:so55=0:so56=0:so57=0:so65=0:so66=0:so67=0:so68=0:so69=0:so70=0:so71=0:so72=0:so73=0:so74=0:so75=0:so76=0:so77=0:so78=0:so79=0:so80=0:so81=0:so82=0:so83=0:so84=0:so85=0:so86=0:so87=0:so88=0:so89=0:so90=0
+shift=0:ctrl=0
+vis=0
+vdice=0
+metro=1.0
+metro2=1.0
+glitch=1.0
+glitchcnt=0
+notesel ini
+
+randomize
+
+bpmc=128
+
+*chkinit
+
+ini="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+
+bpm=60000.0/bpmc
+timeGetTime
+beatdown=0.0+stat
+
+color 24,24,24
+boxf
+color 72,72,72
+boxf 0,0,639,27
+
+keyh=30:keyv=40
+k48h=keyh+540:k48v=keyv+0;0
+k49h=keyh+0:k49v=keyv+0;1
+k50h=keyh+60:k50v=keyv+0;2
+k51h=keyh+120:k51v=keyv+0;3
+k52h=keyh+180:k52v=keyv+0;4
+k53h=keyh+240:k53v=keyv+0;5
+k54h=keyh+300:k54v=keyv+0;6
+k55h=keyh+360:k55v=keyv+0;7
+k56h=keyh+420:k56v=keyv+0;8
+k57h=keyh+480:k57v=keyv+0;9
+k65h=keyh+30:k65v=keyv+120;a
+k66h=keyh+300:k66v=keyv+180;b
+k67h=keyh+180:k67v=keyv+180;c
+k68h=keyh+150:k68v=keyv+120;d
+k69h=keyh+120:k69v=keyv+60;e
+k70h=keyh+210:k70v=keyv+120;f
+k71h=keyh+270:k71v=keyv+120;g
+k72h=keyh+330:k72v=keyv+120;h
+k73h=keyh+420:k73v=keyv+60;i
+k74h=keyh+390:k74v=keyv+120;j
+k75h=keyh+450:k75v=keyv+120;k
+k76h=keyh+510:k76v=keyv+120;l
+k77h=keyh+420:k77v=keyv+180;m
+k78h=keyh+360:k78v=keyv+180;n
+k79h=keyh+480:k79v=keyv+60;o
+k80h=keyh+540:k80v=keyv+60;p
+k81h=keyh+0:k81v=keyv+60;q
+k82h=keyh+180:k82v=keyv+60;r
+k83h=keyh+90:k83v=keyv+120;s
+k84h=keyh+240:k84v=keyv+60;t
+k85h=keyh+360:k85v=keyv+60;u
+k86h=keyh+240:k86v=keyv+180;v
+k87h=keyh+60:k87v=keyv+60;w
+k88h=keyh+120:k88v=keyv+180;x
+k89h=keyh+300:k89v=keyv+60;y
+k90h=keyh+60:k90v=keyv+180;z
+
+bpmh=130:bpmv=4
+
+font "Arial",14
+
+objsize 20,20
+
+pos k48h+0,k48v+0:button "0",*o48
+pos k49h+0,k49v+0:button "1",*o49
+pos k50h+0,k50v+0:button "2",*o50
+pos k51h+0,k51v+0:button "3",*o51
+pos k52h+0,k52v+0:button "4",*o52
+pos k53h+0,k53v+0:button "5",*o53
+pos k54h+0,k54v+0:button "6",*o54
+pos k55h+0,k55v+0:button "7",*o55
+pos k56h+0,k56v+0:button "8",*o56
+pos k57h+0,k57v+0:button "9",*o57
+pos k65h+0,k65v+0:button "a",*o65
+pos k66h+0,k66v+0:button "b",*o66
+pos k67h+0,k67v+0:button "c",*o67
+pos k68h+0,k68v+0:button "d",*o68
+pos k69h+0,k69v+0:button "e",*o69
+pos k70h+0,k70v+0:button "f",*o70
+pos k71h+0,k71v+0:button "g",*o71
+pos k72h+0,k72v+0:button "h",*o72
+pos k73h+0,k73v+0:button "i",*o73
+pos k74h+0,k74v+0:button "j",*o74
+pos k75h+0,k75v+0:button "k",*o75
+pos k76h+0,k76v+0:button "l",*o76
+pos k77h+0,k77v+0:button "m",*o77
+pos k78h+0,k78v+0:button "n",*o78
+pos k79h+0,k79v+0:button "o",*o79
+pos k80h+0,k80v+0:button "p",*o80
+pos k81h+0,k81v+0:button "q",*o81
+pos k82h+0,k82v+0:button "r",*o82
+pos k83h+0,k83v+0:button "s",*o83
+pos k84h+0,k84v+0:button "t",*o84
+pos k85h+0,k85v+0:button "u",*o85
+pos k86h+0,k86v+0:button "v",*o86
+pos k87h+0,k87v+0:button "w",*o87
+pos k88h+0,k88v+0:button "x",*o88
+pos k89h+0,k89v+0:button "y",*o89
+pos k90h+0,k90v+0:button "z",*o90
+
+pos bpmh+0,bpmv+0:button "-",*dbpm
+pos bpmh+22,bpmv+1:color 255,255,255:mes bpmc
+pos bpmh+48,bpmv+0:button "+",*ubpm
+
+objsize 13,13
+
+pos k48h+3,k48v+25:chkbox "",b48
+pos k49h+3,k49v+25:chkbox "",b49
+pos k50h+3,k50v+25:chkbox "",b50
+pos k51h+3,k51v+25:chkbox "",b51
+pos k52h+3,k52v+25:chkbox "",b52
+pos k53h+3,k53v+25:chkbox "",b53
+pos k54h+3,k54v+25:chkbox "",b54
+pos k55h+3,k55v+25:chkbox "",b55
+pos k56h+3,k56v+25:chkbox "",b56
+pos k57h+3,k57v+25:chkbox "",b57
+pos k65h+3,k65v+25:chkbox "",b65
+pos k66h+3,k66v+25:chkbox "",b66
+pos k67h+3,k67v+25:chkbox "",b67
+pos k68h+3,k68v+25:chkbox "",b68
+pos k69h+3,k69v+25:chkbox "",b69
+pos k70h+3,k70v+25:chkbox "",b70
+pos k71h+3,k71v+25:chkbox "",b71
+pos k72h+3,k72v+25:chkbox "",b72
+pos k73h+3,k73v+25:chkbox "",b73
+pos k74h+3,k74v+25:chkbox "",b74
+pos k75h+3,k75v+25:chkbox "",b75
+pos k76h+3,k76v+25:chkbox "",b76
+pos k77h+3,k77v+25:chkbox "",b77
+pos k78h+3,k78v+25:chkbox "",b78
+pos k79h+3,k79v+25:chkbox "",b79
+pos k80h+3,k80v+25:chkbox "",b80
+pos k81h+3,k81v+25:chkbox "",b81
+pos k82h+3,k82v+25:chkbox "",b82
+pos k83h+3,k83v+25:chkbox "",b83
+pos k84h+3,k84v+25:chkbox "",b84
+pos k85h+3,k85v+25:chkbox "",b85
+pos k86h+3,k86v+25:chkbox "",b86
+pos k87h+3,k87v+25:chkbox "",b87
+pos k88h+3,k88v+25:chkbox "",b88
+pos k89h+3,k89v+25:chkbox "",b89
+pos k90h+3,k90v+25:chkbox "",b90
+
+pos k48h+23,k48v+25:chkbox "",so48
+pos k49h+23,k49v+25:chkbox "",so49
+pos k50h+23,k50v+25:chkbox "",so50
+pos k51h+23,k51v+25:chkbox "",so51
+pos k52h+23,k52v+25:chkbox "",so52
+pos k53h+23,k53v+25:chkbox "",so53
+pos k54h+23,k54v+25:chkbox "",so54
+pos k55h+23,k55v+25:chkbox "",so55
+pos k56h+23,k56v+25:chkbox "",so56
+pos k57h+23,k57v+25:chkbox "",so57
+pos k65h+23,k65v+25:chkbox "",so65
+pos k66h+23,k66v+25:chkbox "",so66
+pos k67h+23,k67v+25:chkbox "",so67
+pos k68h+23,k68v+25:chkbox "",so68
+pos k69h+23,k69v+25:chkbox "",so69
+pos k70h+23,k70v+25:chkbox "",so70
+pos k71h+23,k71v+25:chkbox "",so71
+pos k72h+23,k72v+25:chkbox "",so72
+pos k73h+23,k73v+25:chkbox "",so73
+pos k74h+23,k74v+25:chkbox "",so74
+pos k75h+23,k75v+25:chkbox "",so75
+pos k76h+23,k76v+25:chkbox "",so76
+pos k77h+23,k77v+25:chkbox "",so77
+pos k78h+23,k78v+25:chkbox "",so78
+pos k79h+23,k79v+25:chkbox "",so79
+pos k80h+23,k80v+25:chkbox "",so80
+pos k81h+23,k81v+25:chkbox "",so81
+pos k82h+23,k82v+25:chkbox "",so82
+pos k83h+23,k83v+25:chkbox "",so83
+pos k84h+23,k84v+25:chkbox "",so84
+pos k85h+23,k85v+25:chkbox "",so85
+pos k86h+23,k86v+25:chkbox "",so86
+pos k87h+23,k87v+25:chkbox "",so87
+pos k88h+23,k88v+25:chkbox "",so88
+pos k89h+23,k89v+25:chkbox "",so89
+pos k90h+23,k90v+25:chkbox "",so90
+
+objsize 40,20
+
+pos 30,4:button "Load",*load
+pos 80,4:button "Save",*save
+
+pos 210,4:button "Visual",*visual
+
+objsize 40,20
+
+pos 260,4:button "? ? ?",*omake
+
+*clocker
+	
+redraw 0
+
+t48=p48
+getkey p48,48
+t=t48:p=p48:b=b48:c=c48:kh=k48h:kv=k48v:be=be48
+gosub *judge
+c48=c
+
+t49=p49
+getkey p49,49
+if off1==0 {
+	t=t49:p=p49:b=b49:c=c49:kh=k49h:kv=k49v:be=be49
+	gosub *judge
+	c49=c
+}
+
+t50=p50
+getkey p50,50
+t=t50:p=p50:b=b50:c=c50:kh=k50h:kv=k50v:be=be50
+gosub *judge
+c50=c
+
+t51=p51
+getkey p51,51
+t=t51:p=p51:b=b51:c=c51:kh=k51h:kv=k51v:be=be51
+gosub *judge
+c51=c
+
+t52=p52
+getkey p52,52
+t=t52:p=p52:b=b52:c=c52:kh=k52h:kv=k52v:be=be52
+gosub *judge
+c52=c
+
+t53=p53
+getkey p53,53
+t=t53:p=p53:b=b53:c=c53:kh=k53h:kv=k53v:be=be53
+gosub *judge
+c53=c
+
+t54=p54
+getkey p54,54
+t=t54:p=p54:b=b54:c=c54:kh=k54h:kv=k54v:be=be54
+gosub *judge
+c54=c
+
+t55=p55
+getkey p55,55
+t=t55:p=p55:b=b55:c=c55:kh=k55h:kv=k55v:be=be55
+gosub *judge
+c55=c
+
+t56=p56
+getkey p56,56
+t=t56:p=p56:b=b56:c=c56:kh=k56h:kv=k56v:be=be56
+gosub *judge
+c56=c
+
+t57=p57
+getkey p57,57
+t=t57:p=p57:b=b57:c=c57:kh=k57h:kv=k57v:be=be57
+gosub *judge
+c57=c
+
+t65=p65
+getkey p65,65
+if off3==0 {
+	t=t65:p=p65:b=b65:c=c65:kh=k65h:kv=k65v:be=be65
+	gosub *judge
+	c65=c
+}
+
+t66=p66
+getkey p66,66
+t=t66:p=p66:b=b66:c=c66:kh=k66h:kv=k66v:be=be66
+gosub *judge
+c66=c
+
+t67=p67
+getkey p67,67
+t=t67:p=p67:b=b67:c=c67:kh=k67h:kv=k67v:be=be67
+gosub *judge
+c67=c
+
+t68=p68
+getkey p68,68
+t=t68:p=p68:b=b68:c=c68:kh=k68h:kv=k68v:be=be68
+gosub *judge
+c68=c
+
+t69=p69
+getkey p69,69
+t=t69:p=p69:b=b69:c=c69:kh=k69h:kv=k69v:be=be69
+gosub *judge
+c69=c
+
+t70=p70
+getkey p70,70
+t=t70:p=p70:b=b70:c=c70:kh=k70h:kv=k70v:be=be70
+gosub *judge
+c70=c
+
+t71=p71
+getkey p71,71
+t=t71:p=p71:b=b71:c=c71:kh=k71h:kv=k71v:be=be71
+gosub *judge
+c71=c
+
+t72=p72
+getkey p72,72
+t=t72:p=p72:b=b72:c=c72:kh=k72h:kv=k72v:be=be72
+gosub *judge
+c72=c
+
+t73=p73
+getkey p73,73
+t=t73:p=p73:b=b73:c=c73:kh=k73h:kv=k73v:be=be73
+gosub *judge
+c73=c
+
+t74=p74
+getkey p74,74
+t=t74:p=p74:b=b74:c=c74:kh=k74h:kv=k74v:be=be74
+gosub *judge
+c74=c
+
+t75=p75
+getkey p75,75
+t=t75:p=p75:b=b75:c=c75:kh=k75h:kv=k75v:be=be75
+gosub *judge
+c75=c
+
+t76=p76
+getkey p76,76
+t=t76:p=p76:b=b76:c=c76:kh=k76h:kv=k76v:be=be76
+gosub *judge
+c76=c
+
+t77=p77
+getkey p77,77
+t=t77:p=p77:b=b77:c=c77:kh=k77h:kv=k77v:be=be77
+gosub *judge
+c77=c
+
+t78=p78
+getkey p78,78
+t=t78:p=p78:b=b78:c=c78:kh=k78h:kv=k78v:be=be78
+gosub *judge
+c78=c
+
+t79=p79
+getkey p79,79
+t=t79:p=p79:b=b79:c=c79:kh=k79h:kv=k79v:be=be79
+gosub *judge
+c79=c
+
+t80=p80
+getkey p80,80
+t=t80:p=p80:b=b80:c=c80:kh=k80h:kv=k80v:be=be80
+gosub *judge
+c80=c
+
+t81=p81
+getkey p81,81
+if off2==0 {
+	t=t81:p=p81:b=b81:c=c81:kh=k81h:kv=k81v:be=be81
+	gosub *judge
+	c81=c
+}
+
+t82=p82
+getkey p82,82
+t=t82:p=p82:b=b82:c=c82:kh=k82h:kv=k82v:be=be82
+gosub *judge
+c82=c
+
+t83=p83
+getkey p83,83
+t=t83:p=p83:b=b83:c=c83:kh=k83h:kv=k83v:be=be83
+gosub *judge
+c83=c
+
+t84=p84
+getkey p84,84
+t=t84:p=p84:b=b84:c=c84:kh=k84h:kv=k84v:be=be84
+gosub *judge
+c84=c
+
+t85=p85
+getkey p85,85
+t=t85:p=p85:b=b85:c=c85:kh=k85h:kv=k85v:be=be85
+gosub *judge
+c85=c
+
+t86=p86
+getkey p86,86
+t=t86:p=p86:b=b86:c=c86:kh=k86h:kv=k86v:be=be86
+gosub *judge
+c86=c
+
+t87=p87
+getkey p87,87
+t=t87:p=p87:b=b87:c=c87:kh=k87h:kv=k87v:be=be87
+gosub *judge
+c87=c
+
+t88=p88
+getkey p88,88
+t=t88:p=p88:b=b88:c=c88:kh=k88h:kv=k88v:be=be88
+gosub *judge
+c88=c
+
+t89=p89
+getkey p89,89
+t=t89:p=p89:b=b89:c=c89:kh=k89h:kv=k89v:be=be89
+gosub *judge
+c89=c
+
+t90=p90
+getkey p90,90
+if off4==0 {
+	t=t90:p=p90:b=b90:c=c90:kh=k90h:kv=k90v:be=be90
+	gosub *judge
+	c90=c
+}
+
+getkey shift,16
+getkey ctrl,17
+getkey esc,27
+
+if p49!t49&p49=1&shift=1 {
+	color 0,0,0
+	boxf k48h+0,k48v+21,k48h+39,k48v+22
+	boxf k49h+0,k49v+21,k49h+39,k49v+22
+	boxf k50h+0,k50v+21,k50h+39,k50v+22
+	boxf k51h+0,k51v+21,k51h+39,k51v+22
+	boxf k52h+0,k52v+21,k52h+39,k52v+22
+	boxf k53h+0,k53v+21,k53h+39,k53v+22
+	boxf k54h+0,k54v+21,k54h+39,k54v+22
+	boxf k55h+0,k55v+21,k55h+39,k55v+22
+	boxf k56h+0,k56v+21,k56h+39,k56v+22
+	boxf k57h+0,k57v+21,k57h+39,k57v+22
+	rand1=0
+	off1=1
+	c48=0:c49=0:c50=0:c51=0:c52=0:c53=0:c54=0:c55=0:c56=0:c57=0
+}
+
+if p49!t49&p49=1&ctrl=1&off1==0 {
+	if rand1=1 {
+		color 0,0,0
+		boxf k48h+0,k48v+21,k48h+39,k48v+22
+		boxf k49h+0,k49v+21,k49h+39,k49v+22
+		boxf k50h+0,k50v+21,k50h+39,k50v+22
+		boxf k51h+0,k51v+21,k51h+39,k51v+22
+		boxf k52h+0,k52v+21,k52h+39,k52v+22
+		boxf k53h+0,k53v+21,k53h+39,k53v+22
+		boxf k54h+0,k54v+21,k54h+39,k54v+22
+		boxf k55h+0,k55v+21,k55h+39,k55v+22
+		boxf k56h+0,k56v+21,k56h+39,k56v+22
+		boxf k57h+0,k57v+21,k57h+39,k57v+22
+		rand1=0
+		off1=1
+		c48=0:c49=0:c50=0:c51=0:c52=0:c53=0:c54=0:c55=0:c56=0:c57=0
+	} else {
+		rand1=1
+	}
+}
+
+if rand1=1 {
+	color 102,0,255
+	boxf k48h+0,k48v+21,k48h+39,k48v+22
+	boxf k49h+0,k49v+21,k49h+39,k49v+22
+	boxf k50h+0,k50v+21,k50h+39,k50v+22
+	boxf k51h+0,k51v+21,k51h+39,k51v+22
+	boxf k52h+0,k52v+21,k52h+39,k52v+22
+	boxf k53h+0,k53v+21,k53h+39,k53v+22
+	boxf k54h+0,k54v+21,k54h+39,k54v+22
+	boxf k55h+0,k55v+21,k55h+39,k55v+22
+	boxf k56h+0,k56v+21,k56h+39,k56v+22
+	boxf k57h+0,k57v+21,k57h+39,k57v+22
+}
+
+if off1==1&p49!t49&p49==0 {
+	off1=0
+}
+
+if p81!t81&p81=1&shift=1 {
+	color 0,0,0
+	boxf k81h+0,k81v+21,k81h+39,k81v+22
+	boxf k87h+0,k87v+21,k87h+39,k87v+22
+	boxf k69h+0,k69v+21,k69h+39,k69v+22
+	boxf k82h+0,k82v+21,k82h+39,k82v+22
+	boxf k84h+0,k84v+21,k84h+39,k84v+22
+	boxf k89h+0,k89v+21,k89h+39,k89v+22
+	boxf k85h+0,k85v+21,k85h+39,k85v+22
+	boxf k73h+0,k73v+21,k73h+39,k73v+22
+	boxf k79h+0,k79v+21,k79h+39,k79v+22
+	boxf k80h+0,k80v+21,k80h+39,k80v+22
+	rand2=0
+	off2=1
+	c81=0:c87=0:c69=0:c82=0:c84=0:c89=0:c85=0:c73=0:c79=0:c80=0
+}
+
+if p81!t81&p81=1&ctrl=1 {
+	if rand2=1 {
+		color 0,0,0
+		boxf k81h+0,k81v+21,k81h+39,k81v+22
+		boxf k87h+0,k87v+21,k87h+39,k87v+22
+		boxf k69h+0,k69v+21,k69h+39,k69v+22
+		boxf k82h+0,k82v+21,k82h+39,k82v+22
+		boxf k84h+0,k84v+21,k84h+39,k84v+22
+		boxf k89h+0,k89v+21,k89h+39,k89v+22
+		boxf k85h+0,k85v+21,k85h+39,k85v+22
+		boxf k73h+0,k73v+21,k73h+39,k73v+22
+		boxf k79h+0,k79v+21,k79h+39,k79v+22
+		boxf k80h+0,k80v+21,k80h+39,k80v+22
+		rand2=0
+		off2=1
+		c81=0:c87=0:c69=0:c82=0:c84=0:c89=0:c85=0:c73=0:c79=0:c80=0
+	} else {
+		rand2=1
+	}
+}
+
+if rand2=1 {
+	color 102,0,255
+	boxf k81h+0,k81v+21,k81h+39,k81v+22
+	boxf k87h+0,k87v+21,k87h+39,k87v+22
+	boxf k69h+0,k69v+21,k69h+39,k69v+22
+	boxf k82h+0,k82v+21,k82h+39,k82v+22
+	boxf k84h+0,k84v+21,k84h+39,k84v+22
+	boxf k89h+0,k89v+21,k89h+39,k89v+22
+	boxf k85h+0,k85v+21,k85h+39,k85v+22
+	boxf k73h+0,k73v+21,k73h+39,k73v+22
+	boxf k79h+0,k79v+21,k79h+39,k79v+22
+	boxf k80h+0,k80v+21,k80h+39,k80v+22
+}
+
+if off2==1&p81!t81&p81==0 {
+	off2=0
+}
+
+if p65!t65&p65=1&shift=1 {
+	color 0,0,0
+	boxf k65h+0,k65v+21,k65h+39,k65v+22
+	boxf k83h+0,k83v+21,k83h+39,k83v+22
+	boxf k68h+0,k68v+21,k68h+39,k68v+22
+	boxf k70h+0,k70v+21,k70h+39,k70v+22
+	boxf k71h+0,k71v+21,k71h+39,k71v+22
+	boxf k72h+0,k72v+21,k72h+39,k72v+22
+	boxf k74h+0,k74v+21,k74h+39,k74v+22
+	boxf k75h+0,k75v+21,k75h+39,k75v+22
+	boxf k76h+0,k76v+21,k76h+39,k76v+22
+	rand3=0
+	off3=1
+	c65=0:c83=0:c68=0:c70=0:c71=0:c72=0:c74=0:c75=0:c76=0
+}
+
+if p65!t65&p65=1&ctrl=1 {
+	if rand3=1 {
+		color 0,0,0
+		boxf k65h+0,k65v+21,k65h+39,k65v+22
+		boxf k83h+0,k83v+21,k83h+39,k83v+22
+		boxf k68h+0,k68v+21,k68h+39,k68v+22
+		boxf k70h+0,k70v+21,k70h+39,k70v+22
+		boxf k71h+0,k71v+21,k71h+39,k71v+22
+		boxf k72h+0,k72v+21,k72h+39,k72v+22
+		boxf k74h+0,k74v+21,k74h+39,k74v+22
+		boxf k75h+0,k75v+21,k75h+39,k75v+22
+		boxf k76h+0,k76v+21,k76h+39,k76v+22
+		rand3=0
+		off3=1
+		c65=0:c83=0:c68=0:c70=0:c71=0:c72=0:c74=0:c75=0:c76=0
+	} else {
+		rand3=1
+	}
+}
+
+if rand3=1 {
+	color 102,0,255
+	boxf k65h+0,k65v+21,k65h+39,k65v+22
+	boxf k83h+0,k83v+21,k83h+39,k83v+22
+	boxf k68h+0,k68v+21,k68h+39,k68v+22
+	boxf k70h+0,k70v+21,k70h+39,k70v+22
+	boxf k71h+0,k71v+21,k71h+39,k71v+22
+	boxf k72h+0,k72v+21,k72h+39,k72v+22
+	boxf k74h+0,k74v+21,k74h+39,k74v+22
+	boxf k75h+0,k75v+21,k75h+39,k75v+22
+	boxf k76h+0,k76v+21,k76h+39,k76v+22
+}
+
+if off3==1&p65!t65&p65==0 {
+	off3=0
+}
+
+if p90!t90&p90=1&shift=1 {
+	color 0,0,0
+	boxf k90h+0,k90v+21,k90h+39,k90v+22
+	boxf k88h+0,k88v+21,k88h+39,k88v+22
+	boxf k67h+0,k67v+21,k67h+39,k67v+22
+	boxf k86h+0,k86v+21,k86h+39,k86v+22
+	boxf k66h+0,k66v+21,k66h+39,k66v+22
+	boxf k78h+0,k78v+21,k78h+39,k78v+22
+	boxf k77h+0,k77v+21,k77h+39,k77v+22
+	rand4=0
+	off4=1
+	c90=0:c88=0:c67=0:c86=0:c66=0:c78=0:c77=0
+}
+
+if p90!t90&p90=1&ctrl=1 {
+	if rand4=1 {
+		color 0,0,0
+		boxf k90h+0,k90v+21,k90h+39,k90v+22
+		boxf k88h+0,k88v+21,k88h+39,k88v+22
+		boxf k67h+0,k67v+21,k67h+39,k67v+22
+		boxf k86h+0,k86v+21,k86h+39,k86v+22
+		boxf k66h+0,k66v+21,k66h+39,k66v+22
+		boxf k78h+0,k78v+21,k78h+39,k78v+22
+		boxf k77h+0,k77v+21,k77h+39,k77v+22
+		rand4=0
+		off4=1
+		c90=0:c88=0:c67=0:c86=0:c66=0:c78=0:c77=0
+	} else {
+		rand4=1
+	}
+}
+
+if rand4=1 {
+	color 102,0,255
+	boxf k90h+0,k90v+21,k90h+39,k90v+22
+	boxf k88h+0,k88v+21,k88h+39,k88v+22
+	boxf k67h+0,k67v+21,k67h+39,k67v+22
+	boxf k86h+0,k86v+21,k86h+39,k86v+22
+	boxf k66h+0,k66v+21,k66h+39,k66v+22
+	boxf k78h+0,k78v+21,k78h+39,k78v+22
+	boxf k77h+0,k77v+21,k77h+39,k77v+22
+}
+
+if off4==1&p90!t90&p90==0 {
+	off4=0
+}
+
+if esc=1 {
+	color 0,0,0
+	boxf k48h+0,k48v+21,k48h+39,k48v+22
+	boxf k49h+0,k49v+21,k49h+39,k49v+22
+	boxf k50h+0,k50v+21,k50h+39,k50v+22
+	boxf k51h+0,k51v+21,k51h+39,k51v+22
+	boxf k52h+0,k52v+21,k52h+39,k52v+22
+	boxf k53h+0,k53v+21,k53h+39,k53v+22
+	boxf k54h+0,k54v+21,k54h+39,k54v+22
+	boxf k55h+0,k55v+21,k55h+39,k55v+22
+	boxf k56h+0,k56v+21,k56h+39,k56v+22
+	boxf k57h+0,k57v+21,k57h+39,k57v+22
+	rand1=0
+	c48=0:c49=0:c50=0:c51=0:c52=0:c53=0:c54=0:c55=0:c56=0:c57=0
+	boxf k81h+0,k81v+21,k81h+39,k81v+22
+	boxf k87h+0,k87v+21,k87h+39,k87v+22
+	boxf k69h+0,k69v+21,k69h+39,k69v+22
+	boxf k82h+0,k82v+21,k82h+39,k82v+22
+	boxf k84h+0,k84v+21,k84h+39,k84v+22
+	boxf k89h+0,k89v+21,k89h+39,k89v+22
+	boxf k85h+0,k85v+21,k85h+39,k85v+22
+	boxf k73h+0,k73v+21,k73h+39,k73v+22
+	boxf k79h+0,k79v+21,k79h+39,k79v+22
+	boxf k80h+0,k80v+21,k80h+39,k80v+22
+	rand2=0
+	c81=0:c87=0:c69=0:c82=0:c84=0:c89=0:c85=0:c73=0:c79=0:c80=0
+	boxf k65h+0,k65v+21,k65h+39,k65v+22
+	boxf k83h+0,k83v+21,k83h+39,k83v+22
+	boxf k68h+0,k68v+21,k68h+39,k68v+22
+	boxf k70h+0,k70v+21,k70h+39,k70v+22
+	boxf k71h+0,k71v+21,k71h+39,k71v+22
+	boxf k72h+0,k72v+21,k72h+39,k72v+22
+	boxf k74h+0,k74v+21,k74h+39,k74v+22
+	boxf k75h+0,k75v+21,k75h+39,k75v+22
+	boxf k76h+0,k76v+21,k76h+39,k76v+22
+	rand3=0
+	c65=0:c83=0:c68=0:c70=0:c71=0:c72=0:c74=0:c75=0:c76=0
+	boxf k90h+0,k90v+21,k90h+39,k90v+22
+	boxf k88h+0,k88v+21,k88h+39,k88v+22
+	boxf k67h+0,k67v+21,k67h+39,k67v+22
+	boxf k86h+0,k86v+21,k86h+39,k86v+22
+	boxf k66h+0,k66v+21,k66h+39,k66v+22
+	boxf k78h+0,k78v+21,k78h+39,k78v+22
+	boxf k77h+0,k77v+21,k77h+39,k77v+22
+	rand4=0
+	c90=0:c88=0:c67=0:c86=0:c66=0:c78=0:c77=0
+	if vis=1&shift=1 {
+		goto *visual
+	}
+}	
+
+timeGetTime
+if (stat-beatdown)>=bpm*2 {
+	beatdown=0.0+stat
+}
+if (stat-beatdown)>=bpm {
+	goto *beat
+}
+
+getkey left,37
+getkey right,39
+if left==1 {
+	beatdown=beatdown+1
+}
+if right==1 {
+	beatdown=beatdown-1
+}
+
+tdown=pdown
+getkey pdown,40
+if pdown!tdown&pdown=1 {
+	timeGetTime
+	beatdown=0.0+stat-bpm
+	goto *beat
+}	
+
+color metro*255,metro*255,metro*255
+circle 8,8,19,19
+metro=metro*0.9
+metro2=metro2*0.96
+
+redraw 1
+
+if vis==1 {
+	gsel 1
+	redraw 0
+	if vdice==0 {
+		#include "v00.hsp"
+	}
+	if vdice==1 {
+		#include "v01.hsp"
+	}
+	if vdice==2 {
+		#include "v02.hsp"
+	}
+	if vdice==3 {
+		#include "v03.hsp"
+	}
+	if vdice==4 {
+		#include "v04.hsp"
+	}
+	if vdice==5 {
+		#include "v05.hsp"
+	}
+	if vdice==6 {
+		#include "v06.hsp"
+	}
+	if vdice==7 {
+		#include "v07.hsp"
+	}
+	if vdice==8 {
+		#include "v08.hsp"
+	}
+	if vdice==9 {
+		#include "v09.hsp"
+	}
+	if vdice==10 {
+		#include "v10.hsp"
+	}
+	if vdice==11 {
+		#include "v11.hsp"
+	}
+	if vdice==12 {
+		#include "v12.hsp"
+	}
+	if vdice==13 {
+		#include "v13.hsp"
+	}
+}
+
+redraw 1
+gsel 0
+
+await 10
+
+goto *clocker
+
+*judge
+if b=1 {
+	if p!t&p=1 {
+		if c=1 {
+			c=0
+			color 0,0,0
+			boxf kh+0,kv+21,kh+39,kv+22
+		} else {
+			c=1
+			color 0,255,102
+			boxf kh+0,kv+21,kh+39,kv+22
+		}
+	}			
+} else {
+	if p=1 {
+		color 255,153,0
+		boxf kh+0,kv+21,kh+39,kv+22
+		c=1
+	} else {
+		color 0,0,0
+		boxf kh+0,kv+21,kh+39,kv+22
+		c=0
+	}
+}
+if be==2 {
+	color metro2*102,metro2*255,0
+	boxf kh+20,kv+0,kh+39,kv+19
+}
+if be==1 {
+	color metro2*255,0,metro2*102
+	boxf kh+20,kv+0,kh+39,kv+19
+}
+if be==0 {
+	color 0,0,0
+	boxf kh+20,kv+0,kh+39,kv+19
+}
+return
+
+*beat
+
+metro=1.0
+metro2=1.0
+
+getkey pg1,117
+getkey pg2,118
+getkey pg3,119
+getkey pg4,120
+
+if glitchcnt==0 {
+	glitch=1.0
+}
+if pg1==1&glitchcnt==0 {
+	glitch=2.0
+}
+if pg2==1&glitchcnt==0 {
+	glitch=3.0
+}
+if pg3==1&glitchcnt==0 {
+	glitch=4.0
+}
+if pg4==1&glitchcnt==0 {
+	glitch=8.0
+}
+
+if glitchcnt==0 {
+	glitchcnt=glitch-1
+} else {
+	glitchcnt=glitchcnt-1
+}
+
+beatdown=beatdown+bpm/glitch
+
+if rand1=1 {
+	c48=0:c49=0:c50=0:c51=0:c52=0:c53=0:c54=0:c55=0:c56=0:c57=0
+	if glitchcnt==glitch-1{dice1=rnd(10)}
+	if dice1=0{c48=1}:if dice1=1{c49=1}:if dice1=2{c50=1}:if dice1=3{c51=1}:if dice1=4{c52=1}:if dice1=5{c53=1}:if dice1=6{c54=1}:if dice1=7{c55=1}:if dice1=8{c56=1}:if dice1=9{c57=1}
+}
+
+if rand2=1 {
+	c81=0:c87=0:c69=0:c82=0:c84=0:c89=0:c85=0:c73=0:c79=0:c80=0
+	if glitchcnt==glitch-1{dice2=rnd(10)}
+	if dice2=0{c81=1}:if dice2=1{c87=1}:if dice2=2{c69=1}:if dice2=3{c82=1}:if dice2=4{c84=1}:if dice2=5{c89=1}:if dice2=6{c85=1}:if dice2=7{c73=1}:if dice2=8{c79=1}:if dice2=9{c80=1}
+}
+
+if rand3=1 {
+	c65=0:c83=0:c68=0:c70=0:c71=0:c72=0:c74=0:c75=0:c76=0
+	if glitchcnt==glitch-1{dice3=rnd(9)}
+	if dice3=0{c65=1}:if dice3=1{c83=1}:if dice3=2{c68=1}:if dice3=3{c70=1}:if dice3=4{c71=1}:if dice3=5{c72=1}:if dice3=6{c74=1}:if dice3=7{c75=1}:if dice3=8{c76=1}
+}
+
+if rand4=1 {
+	c90=0:c88=0:c67=0:c86=0:c66=0:c78=0:c77=0
+	if glitchcnt==glitch-1{dice4=rnd(7)}
+	if dice4=0{c90=1}:if dice4=1{c88=1}:if dice4=2{c67=1}:if dice4=3{c86=1}:if dice4=4{c66=1}:if dice4=5{c78=1}:if dice4=6{c77=1}
+}
+
+dsstop 100
+
+if c48=1 {
+	if so48=1 {
+		be48=2
+		solo=48
+		dsloadfname s48,100
+	} else {
+		be48=1
+		dsplay 48
+	}
+} else {
+	be48=0
+	dsstop 48
+}
+
+if c49=1 {
+	if so49=1 {
+		be49=2
+		solo=1
+		dsloadfname s49,100
+	} else {
+		be49=1
+		dsplay 49
+	}
+} else {
+	be49=0
+	dsstop 49
+}
+
+if c50=1 {
+	if so50=1 {
+		be50=2
+		solo=1
+		dsloadfname s50,100
+	} else {
+		be50=1
+		dsplay 50
+	}
+} else {
+	be50=0
+	dsstop 50
+}
+
+if c51=1 {
+	if so51=1 {
+		be51=2
+		solo=1
+		dsloadfname s51,100
+	} else {
+		be51=1
+		dsplay 51
+	}
+} else {
+	be51=0
+	dsstop 51
+}
+
+if c52=1 {
+	if so52=1 {
+		be52=2
+		solo=1
+		dsloadfname s52,100
+	} else {
+		be52=1
+		dsplay 52
+	}
+} else {
+	be52=0
+	dsstop 52
+}
+
+if c53=1 {
+	if so53=1 {
+		be53=2
+		solo=1
+		dsloadfname s53,100
+	} else {
+		be53=1
+		dsplay 53
+	}
+} else {
+	be53=0
+	dsstop 53
+}
+
+if c54=1 {
+	if so54=1 {
+		be54=2
+		solo=1
+		dsloadfname s54,100
+	} else {
+		be54=1
+		dsplay 54
+	}
+} else {
+	be54=0
+	dsstop 54
+}
+
+if c55=1 {
+	if so55=1 {
+		be55=2
+		solo=1
+		dsloadfname s55,100
+	} else {
+		be55=1
+		dsplay 55
+	}
+} else {
+	be55=0
+	dsstop 55
+}
+
+if c56=1 {
+	if so56=1 {
+		be56=2
+		solo=1
+		dsloadfname s56,100
+	} else {
+		be56=1
+		dsplay 56
+	}
+} else {
+	be56=0
+	dsstop 56
+}
+
+if c57=1 {
+	if so57=1 {
+		be57=2
+		solo=1
+		dsloadfname s57,100
+	} else {
+		be57=1
+		dsplay 57
+	}
+} else {
+	be57=0
+	dsstop 57
+}
+
+if c65=1 {
+	if so65=1 {
+		be65=2
+		solo=1
+		dsloadfname s65,100
+	} else {
+		be65=1
+		dsplay 65
+	}
+} else {
+	be65=0
+	dsstop 65
+}
+
+if c66=1 {
+	if so66=1 {
+		be66=2
+		solo=1
+		dsloadfname s66,100
+	} else {
+		be66=1
+		dsplay 66
+	}
+} else {
+	be66=0
+	dsstop 66
+}
+
+if c67=1 {
+	if so67=1 {
+		be67=2
+		solo=1
+		dsloadfname s67,100
+	} else {
+		be67=1
+		dsplay 67
+	}
+} else {
+	be67=0
+	dsstop 67
+}
+
+if c68=1 {
+	if so68=1 {
+		be68=2
+		solo=1
+		dsloadfname s68,100
+	} else {
+		be68=1
+		dsplay 68
+	}
+} else {
+	be68=0
+	dsstop 68
+}
+
+if c69=1 {
+	if so69=1 {
+		be69=2
+		solo=1
+		dsloadfname s69,100
+	} else {
+		be69=1
+		dsplay 69
+	}
+} else {
+	be69=0
+	dsstop 69
+}
+
+if c70=1 {
+	if so70=1 {
+		be70=2
+		solo=1
+		dsloadfname s70,100
+	} else {
+		be70=1
+		dsplay 70
+	}
+} else {
+	be70=0
+	dsstop 70
+}
+
+if c71=1 {
+	if so71=1 {
+		be71=2
+		solo=1
+		dsloadfname s71,100
+	} else {
+		be71=1
+		dsplay 71
+	}
+} else {
+	be71=0
+	dsstop 71
+}
+
+if c72=1 {
+	if so72=1 {
+		be72=2
+		solo=1
+		dsloadfname s72,100
+	} else {
+		be72=1
+		dsplay 72
+	}
+} else {
+	be72=0
+	dsstop 72
+}
+
+if c73=1 {
+	if so73=1 {
+		be73=2
+		solo=1
+		dsloadfname s73,100
+	} else {
+		be73=1
+		dsplay 73
+	}
+} else {
+	be73=0
+	dsstop 73
+}
+
+if c74=1 {
+	if so74=1 {
+		be74=2
+		solo=1
+		dsloadfname s74,100
+	} else {
+		be74=1
+		dsplay 74
+	}
+} else {
+	be74=0
+	dsstop 74
+}
+
+if c75=1 {
+	if so75=1 {
+		be75=2
+		solo=1
+		dsloadfname s75,100
+	} else {
+		be75=1
+		dsplay 75
+	}
+} else {
+	be75=0
+	dsstop 75
+}
+
+if c76=1 {
+	if so76=1 {
+		be76=2
+		solo=1
+		dsloadfname s76,100
+	} else {
+		be76=1
+		dsplay 76
+	}
+} else {
+	be76=0
+	dsstop 76
+}
+
+if c77=1 {
+	if so77=1 {
+		be77=2
+		solo=1
+		dsloadfname s77,100
+	} else {
+		be77=1
+		dsplay 77
+	}
+} else {
+	be77=0
+	dsstop 77
+}
+
+if c78=1 {
+	if so78=1 {
+		be78=2
+		solo=1
+		dsloadfname s78,100
+	} else {
+		be78=1
+		dsplay 78
+	}
+} else {
+	be78=0
+	dsstop 78
+}
+
+if c79=1 {
+	if so79=1 {
+		be79=2
+		solo=1
+		dsloadfname s79,100
+	} else {
+		be79=1
+		dsplay 79
+	}
+} else {
+	be79=0
+	dsstop 79
+}
+
+if c80=1 {
+	if so80=1 {
+		be80=2
+		solo=1
+		dsloadfname s80,100
+	} else {
+		be80=1
+		dsplay 80
+	}
+} else {
+	be80=0
+	dsstop 80
+}
+
+if c81=1 {
+	if so81=1 {
+		be81=2
+		solo=1
+		dsloadfname s81,100
+	} else {
+		be81=1
+		dsplay 81
+	}
+} else {
+	be81=0
+	dsstop 81
+}
+
+if c82=1 {
+	if so82=1 {
+		be82=2
+		solo=1
+		dsloadfname s82,100
+	} else {
+		be82=1
+		dsplay 82
+	}
+} else {
+	be82=0
+	dsstop 82
+}
+
+if c83=1 {
+	if so83=1 {
+		be83=2
+		solo=1
+		dsloadfname s83,100
+	} else {
+		be83=1
+		dsplay 83
+	}
+} else {
+	be83=0
+	dsstop 83
+}
+
+if c84=1 {
+	if so84=1 {
+		be84=2
+		solo=1
+		dsloadfname s84,100
+	} else {
+		be84=1
+		dsplay 84
+	}
+} else {
+	be84=0
+	dsstop 84
+}
+
+if c85=1 {
+	if so85=1 {
+		be85=2
+		solo=1
+		dsloadfname s85,100
+	} else {
+		be85=1
+		dsplay 85
+	}
+} else {
+	be85=0
+	dsstop 85
+}
+
+if c86=1 {
+	if so86=1 {
+		be86=2
+		solo=1
+		dsloadfname s86,100
+	} else {
+		be86=1
+		dsplay 86
+	}
+} else {
+	be86=0
+	dsstop 86
+}
+
+if c87=1 {
+	if so87=1 {
+		be87=2
+		solo=1
+		dsloadfname s87,100
+	} else {
+		be87=1
+		dsplay 87
+	}
+} else {
+	be87=0
+	dsstop 87
+}
+
+if c88=1 {
+	if so88=1 {
+		be88=2
+		solo=1
+		dsloadfname s88,100
+	} else {
+		be88=1
+		dsplay 88
+	}
+} else {
+	be88=0
+	dsstop 88
+}
+
+if c89=1 {
+	if so89=1 {
+		be89=2
+		solo=1
+		dsloadfname s89,100
+	} else {
+		be89=1
+		dsplay 89
+	}
+} else {
+	be89=0
+	dsstop 89
+}
+
+if c90=1 {
+	if so90=1 {
+		be90=2
+		solo=1
+		dsloadfname s90,100
+	} else {
+		be90=1
+		dsplay 90
+	}
+} else {
+	be90=0
+	dsstop 90
+}
+
+if solo>=1 {
+	dsstop 48:dsstop 49:dsstop 50:dsstop 51:dsstop 52:dsstop 53:dsstop 54:dsstop 55:dsstop 56:dsstop 57:dsstop 65:dsstop 66:dsstop 67:dsstop 68:dsstop 69:dsstop 70:dsstop 71:dsstop 72:dsstop 73:dsstop 74:dsstop 75:dsstop 76:dsstop 77:dsstop 78:dsstop 79:dsstop 80:dsstop 81:dsstop 82:dsstop 83:dsstop 84:dsstop 85:dsstop 86:dsstop 87:dsstop 88:dsstop 89:dsstop 90
+	dsplay 100
+}
+
+solo=0
+
+if vis==1 {
+	vdice=rnd(14)
+	if vdice==0 {
+		#include "v00init.hsp"
+	}
+	if vdice==1 {
+		#include "v01init.hsp"
+	}
+	if vdice==2 {
+		#include "v02init.hsp"
+	}
+	if vdice==3 {
+		#include "v03init.hsp"
+	}
+	if vdice==4 {
+		#include "v04init.hsp"
+	}
+	if vdice==5 {
+		#include "v05init.hsp"
+	}
+	if vdice==6 {
+		#include "v06init.hsp"
+	}
+	if vdice==7 {
+		#include "v07init.hsp"
+	}
+	if vdice==8 {
+		#include "v08init.hsp"
+	}
+	if vdice==9 {
+		#include "v09init.hsp"
+	}
+	if vdice==10 {
+		#include "v10init.hsp"
+	}
+	if vdice==11 {
+		#include "v11init.hsp"
+	}
+	if vdice==12 {
+		#include "v12init.hsp"
+	}
+	if vdice==13 {
+		#include "v13init.hsp"
+	}
+}
+
+await 10
+
+goto *clocker
+
+*o48
+	dialog "wav",16
+	if stat=1 {
+		s48=refstr:dsloadfname s48,48
+	}
+	goto *clocker
+
+*o49
+	dialog "wav",16
+	if stat=1 {
+		s49=refstr:dsloadfname s49,49
+	}
+	goto *clocker
+
+*o50
+	dialog "wav",16
+	if stat=1 {
+		s50=refstr:dsloadfname s50,50
+	}
+	goto *clocker
+
+*o51
+	dialog "wav",16
+	if stat=1 {
+		s51=refstr:dsloadfname s51,51
+	}
+	goto *clocker
+
+*o52
+	dialog "wav",16
+	if stat=1 {
+		s52=refstr:dsloadfname s52,52
+	}
+	goto *clocker
+
+*o53
+	dialog "wav",16
+	if stat=1 {
+		s53=refstr:dsloadfname s53,53
+	}
+	goto *clocker
+
+*o54
+	dialog "wav",16
+	if stat=1 {
+		s54=refstr:dsloadfname s54,54
+	}
+	goto *clocker
+
+*o55
+	dialog "wav",16
+	if stat=1 {
+		s55=refstr:dsloadfname s55,55
+	}
+	goto *clocker
+
+*o56
+	dialog "wav",16
+	if stat=1 {
+		s56=refstr:dsloadfname s56,56
+	}
+	goto *clocker
+
+*o57
+	dialog "wav",16
+	if stat=1 {
+		s57=refstr:dsloadfname s57,57
+	}
+	goto *clocker
+
+*o65
+	dialog "wav",16
+	if stat=1 {
+		s65=refstr:dsloadfname s65,65
+	}
+	goto *clocker
+
+*o66
+	dialog "wav",16
+	if stat=1 {
+		s66=refstr:dsloadfname s66,66
+	}
+	goto *clocker
+
+*o67
+	dialog "wav",16
+	if stat=1 {
+		s67=refstr:dsloadfname s67,67
+	}
+	goto *clocker
+
+*o68
+	dialog "wav",16
+	if stat=1 {
+		s68=refstr:dsloadfname s68,68
+	}
+	goto *clocker
+
+*o69
+	dialog "wav",16
+	if stat=1 {
+		s69=refstr:dsloadfname s69,69
+	}
+	goto *clocker
+
+*o70
+	dialog "wav",16
+	if stat=1 {
+		s70=refstr:dsloadfname s70,70
+	}
+	goto *clocker
+
+*o71
+	dialog "wav",16
+	if stat=1 {
+		s71=refstr:dsloadfname s71,71
+	}
+	goto *clocker
+
+*o72
+	dialog "wav",16
+	if stat=1 {
+		s72=refstr:dsloadfname s72,72
+	}
+	goto *clocker
+
+*o73
+	dialog "wav",16
+	if stat=1 {
+		s73=refstr:dsloadfname s73,73
+	}
+	goto *clocker
+
+*o74
+	dialog "wav",16
+	if stat=1 {
+		s74=refstr:dsloadfname s74,74
+	}
+	goto *clocker
+
+*o75
+	dialog "wav",16
+	if stat=1 {
+		s75=refstr:dsloadfname s75,75
+	}
+	goto *clocker
+
+*o76
+	dialog "wav",16
+	if stat=1 {
+		s76=refstr:dsloadfname s76,76
+	}
+	goto *clocker
+
+*o77
+	dialog "wav",16
+	if stat=1 {
+		s77=refstr:dsloadfname s77,77
+	}
+	goto *clocker
+
+*o78
+	dialog "wav",16
+	if stat=1 {
+		s78=refstr:dsloadfname s78,78
+	}
+	goto *clocker
+
+*o79
+	dialog "wav",16
+	if stat=1 {
+		s79=refstr:dsloadfname s79,79
+	}
+	goto *clocker
+
+*o80
+	dialog "wav",16
+	if stat=1 {
+		s80=refstr:dsloadfname s80,80
+	}
+	goto *clocker
+
+*o81
+	dialog "wav",16
+	if stat=1 {
+		s81=refstr:dsloadfname s81,81
+	}
+	goto *clocker
+
+*o82
+	dialog "wav",16
+	if stat=1 {
+		s82=refstr:dsloadfname s82,82
+	}
+	goto *clocker
+
+*o83
+	dialog "wav",16
+	if stat=1 {
+		s83=refstr:dsloadfname s83,83
+	}
+	goto *clocker
+
+*o84
+	dialog "wav",16
+	if stat=1 {
+		s84=refstr:dsloadfname s84,84
+	}
+	goto *clocker
+
+*o85
+	dialog "wav",16
+	if stat=1 {
+		s85=refstr:dsloadfname s85,85
+	}
+	goto *clocker
+
+*o86
+	dialog "wav",16
+	if stat=1 {
+		s86=refstr:dsloadfname s86,86
+	}
+	goto *clocker
+
+*o87
+	dialog "wav",16
+	if stat=1 {
+		s87=refstr:dsloadfname s87,87
+	}
+	goto *clocker
+
+*o88
+	dialog "wav",16
+	if stat=1 {
+		s88=refstr:dsloadfname s88,88
+	}
+	goto *clocker
+
+*o89
+	dialog "wav",16
+	if stat=1 {
+		s89=refstr:dsloadfname s89,89
+	}
+	goto *clocker
+
+*o90
+	dialog "wav",16
+	if stat=1 {
+		s90=refstr:dsloadfname s90,90
+	}
+	goto *clocker
+
+*load
+	dialog "ini",16
+	if stat=1 {
+		noteload refstr
+		noteget bpmc,17:bpmc=int(bpmc)
+		noteget s48,48:dsloadfname s48,48:noteget b48,148:b48=int(b48):noteget so48,248:so48=int(so48)
+		noteget s49,49:dsloadfname s49,49:noteget b49,149:b49=int(b49):noteget so49,249:so49=int(so49)
+		noteget s50,50:dsloadfname s50,50:noteget b50,150:b50=int(b50):noteget so50,250:so50=int(so50)
+		noteget s51,51:dsloadfname s51,51:noteget b51,151:b51=int(b51):noteget so51,251:so51=int(so51)
+		noteget s52,52:dsloadfname s52,52:noteget b52,152:b52=int(b52):noteget so52,252:so52=int(so52)
+		noteget s53,53:dsloadfname s53,53:noteget b53,153:b53=int(b53):noteget so53,253:so53=int(so53)
+		noteget s54,54:dsloadfname s54,54:noteget b54,154:b54=int(b54):noteget so54,254:so54=int(so54)
+		noteget s55,55:dsloadfname s55,55:noteget b55,155:b55=int(b55):noteget so55,255:so55=int(so55)
+		noteget s56,56:dsloadfname s56,56:noteget b56,156:b56=int(b56):noteget so56,256:so56=int(so56)
+		noteget s57,57:dsloadfname s57,57:noteget b57,157:b57=int(b57):noteget so57,257:so57=int(so57)
+		noteget s65,65:dsloadfname s65,65:noteget b65,165:b65=int(b65):noteget so65,265:so65=int(so65)
+		noteget s66,66:dsloadfname s66,66:noteget b66,166:b66=int(b66):noteget so66,266:so66=int(so66)
+		noteget s67,67:dsloadfname s67,67:noteget b67,167:b67=int(b67):noteget so67,267:so67=int(so67)
+		noteget s68,68:dsloadfname s68,68:noteget b68,168:b68=int(b68):noteget so68,268:so68=int(so68)
+		noteget s69,69:dsloadfname s69,69:noteget b69,169:b69=int(b69):noteget so69,269:so69=int(so69)
+		noteget s70,70:dsloadfname s70,70:noteget b70,170:b70=int(b70):noteget so70,270:so70=int(so70)
+		noteget s71,71:dsloadfname s71,71:noteget b71,171:b71=int(b71):noteget so71,271:so71=int(so71)
+		noteget s72,72:dsloadfname s72,72:noteget b72,172:b72=int(b72):noteget so72,272:so72=int(so72)
+		noteget s73,73:dsloadfname s73,73:noteget b73,173:b73=int(b73):noteget so73,273:so73=int(so73)
+		noteget s74,74:dsloadfname s74,74:noteget b74,174:b74=int(b74):noteget so74,274:so74=int(so74)
+		noteget s75,75:dsloadfname s75,75:noteget b75,175:b75=int(b75):noteget so75,275:so75=int(so75)
+		noteget s76,76:dsloadfname s76,76:noteget b76,176:b76=int(b76):noteget so76,276:so76=int(so76)
+		noteget s77,77:dsloadfname s77,77:noteget b77,177:b77=int(b77):noteget so77,277:so77=int(so77)
+		noteget s78,78:dsloadfname s78,78:noteget b78,178:b78=int(b78):noteget so78,278:so78=int(so78)
+		noteget s79,79:dsloadfname s79,79:noteget b79,179:b79=int(b79):noteget so79,279:so79=int(so79)
+		noteget s80,80:dsloadfname s80,80:noteget b80,180:b80=int(b80):noteget so80,280:so80=int(so80)
+		noteget s81,81:dsloadfname s81,81:noteget b81,181:b81=int(b81):noteget so81,281:so81=int(so81)
+		noteget s82,82:dsloadfname s82,82:noteget b82,182:b82=int(b82):noteget so82,282:so82=int(so82)
+		noteget s83,83:dsloadfname s83,83:noteget b83,183:b83=int(b83):noteget so83,283:so83=int(so83)
+		noteget s84,84:dsloadfname s84,84:noteget b84,184:b84=int(b84):noteget so84,284:so84=int(so84)
+		noteget s85,85:dsloadfname s85,85:noteget b85,185:b85=int(b85):noteget so85,285:so85=int(so85)
+		noteget s86,86:dsloadfname s86,86:noteget b86,186:b86=int(b86):noteget so86,286:so86=int(so86)
+		noteget s87,87:dsloadfname s87,87:noteget b87,187:b87=int(b87):noteget so87,287:so87=int(so87)
+		noteget s88,88:dsloadfname s88,88:noteget b88,188:b88=int(b88):noteget so88,288:so88=int(so88)
+		noteget s89,89:dsloadfname s89,89:noteget b89,189:b89=int(b89):noteget so89,289:so89=int(so89)
+		noteget s90,90:dsloadfname s90,90:noteget b90,190:b90=int(b90):noteget so90,290:so90=int(so90)
+	}
+	cls 4
+	goto *chkinit
+
+*save
+	noteadd "===================== Meiji Univ. ===================== ",1,1
+	noteadd "________________    _________   _________         __    ",3,1
+	noteadd "\\_   _____/     \\  /   _____/   \\_   ___ \\_____ _/  |_  ",4,1
+	noteadd " |    __)/  \\ /  \\ \\_____  \\    /    \\  \\/\\__  \\\\   __\\ ",5,1
+	noteadd " |     \\/    Y    \\/        \\   \\     \\____/ __ \\|  |   ",6,1
+	noteadd " \\___  /\\____|__  /_______  /____\\______  (____  /__|   ",7,1
+	noteadd "     \\/         \\/        \\/_____/      \\/     \\/       ",8,1
+	noteadd "======================================================= ",10,1
+	noteadd "One Step Sequencer",12,1
+	noteadd "ver 20140525",13,1
+	noteadd str(bpmc),17,1
+	noteadd s48,48,1:noteadd str(b48),148,1:noteadd str(so48),248,1
+	noteadd s49,49,1:noteadd str(b49),149,1:noteadd str(so49),249,1
+	noteadd s50,50,1:noteadd str(b50),150,1:noteadd str(so50),250,1
+	noteadd s51,51,1:noteadd str(b51),151,1:noteadd str(so51),251,1
+	noteadd s52,52,1:noteadd str(b52),152,1:noteadd str(so52),252,1
+	noteadd s53,53,1:noteadd str(b53),153,1:noteadd str(so53),253,1
+	noteadd s54,54,1:noteadd str(b54),154,1:noteadd str(so54),254,1
+	noteadd s55,55,1:noteadd str(b55),155,1:noteadd str(so55),255,1
+	noteadd s56,56,1:noteadd str(b56),156,1:noteadd str(so56),256,1
+	noteadd s57,57,1:noteadd str(b57),157,1:noteadd str(so57),257,1
+	noteadd s65,65,1:noteadd str(b65),165,1:noteadd str(so65),265,1
+	noteadd s66,66,1:noteadd str(b66),166,1:noteadd str(so66),266,1
+	noteadd s67,67,1:noteadd str(b67),167,1:noteadd str(so67),267,1
+	noteadd s68,68,1:noteadd str(b68),168,1:noteadd str(so68),268,1
+	noteadd s69,69,1:noteadd str(b69),169,1:noteadd str(so69),269,1
+	noteadd s70,70,1:noteadd str(b70),170,1:noteadd str(so70),270,1
+	noteadd s71,71,1:noteadd str(b71),171,1:noteadd str(so71),271,1
+	noteadd s72,72,1:noteadd str(b72),172,1:noteadd str(so72),272,1
+	noteadd s73,73,1:noteadd str(b73),173,1:noteadd str(so73),273,1
+	noteadd s74,74,1:noteadd str(b74),174,1:noteadd str(so74),274,1
+	noteadd s75,75,1:noteadd str(b75),175,1:noteadd str(so75),275,1
+	noteadd s76,76,1:noteadd str(b76),176,1:noteadd str(so76),276,1
+	noteadd s77,77,1:noteadd str(b77),177,1:noteadd str(so77),277,1
+	noteadd s78,78,1:noteadd str(b78),178,1:noteadd str(so78),278,1
+	noteadd s79,79,1:noteadd str(b79),179,1:noteadd str(so79),279,1
+	noteadd s80,80,1:noteadd str(b80),180,1:noteadd str(so80),280,1
+	noteadd s81,81,1:noteadd str(b81),181,1:noteadd str(so81),281,1
+	noteadd s82,82,1:noteadd str(b82),182,1:noteadd str(so82),282,1
+	noteadd s83,83,1:noteadd str(b83),183,1:noteadd str(so83),283,1
+	noteadd s84,84,1:noteadd str(b84),184,1:noteadd str(so84),284,1
+	noteadd s85,85,1:noteadd str(b85),185,1:noteadd str(so85),285,1
+	noteadd s86,86,1:noteadd str(b86),186,1:noteadd str(so86),286,1
+	noteadd s87,87,1:noteadd str(b87),187,1:noteadd str(so87),287,1
+	noteadd s88,88,1:noteadd str(b88),188,1:noteadd str(so88),288,1
+	noteadd s89,89,1:noteadd str(b89),189,1:noteadd str(so89),289,1
+	noteadd s90,90,1:noteadd str(b90),190,1:noteadd str(so90),290,1
+	dialog "ini",17
+	if stat=1 {
+		notesave refstr
+	}
+	goto *clocker
+
+*dbpm
+	color 72,72,72
+	boxf bpmh+16,bpmv+0,bpmh+48,bpmv+20
+	if shift==1 {
+		bpmc=bpmc-10
+	} else {
+		bpmc=bpmc-1
+	}
+	if bpmc<40 {
+		bpmc=39
+		bpm=99999
+		color 255,0,102
+		pos bpmh+20,bpmv+1
+		mes "Man"
+	} else {
+		bpm=60000.0/bpmc
+		color 255,255,255
+		pos bpmh+22,bpmv+1
+		mes bpmc
+	}
+	goto *clocker
+
+*ubpm
+	color 72,72,72
+	boxf bpmh+16,bpmv+0,bpmh+48,bpmv+20
+	if shift==1 {
+		bpmc=bpmc+10
+	} else {
+		bpmc=bpmc+1
+	}
+	bpm=60000.0/bpmc
+	color 255,255,255
+	pos bpmh+22,bpmv+1
+	mes bpmc
+	goto *clocker
+	
+*visual
+	if vis==1{
+		vis=0
+		bgscr 1,640,480,2
+		chgdisp
+		mouse
+	} else {
+		vis=1
+		if shift=1 {
+			bgscr 1,640,480,0,0,0
+			chgdisp 1
+			mouse -1
+		} else {
+			screen 1,640,480,0,680,10
+		}
+	}
+	goto *clocker
+	
+*omake
+	#include "myst.hsp"

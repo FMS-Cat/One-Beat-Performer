@@ -1,0 +1,210 @@
+a=0.0
+b=0.03
+h=0
+v=0
+
+*start
+	
+stick e
+if e==32 {
+	goto *nex
+}
+
+redraw 0
+
+getkey lef,37
+getkey rig,39
+if lef=1 {
+	b=b-0.001
+}
+if rig=1 {
+	b=b+0.001
+}
+a=a+b
+spinf=a
+spinm=a
+spins=a
+spinu=a
+spinc=a
+spina=a
+spint=a
+
+check=0
+h=h-1
+v=v-1
+if h==-32 {
+	h=0
+}
+if v==-32 {
+	v=0
+}
+hc=h
+vc=v
+*checker
+color 0,5+sin(a*0.6)*5,10-sin(a*0.6)*10
+boxf hc,vc,hc+15,vc+15
+color 0,20-cos(a*0.6)*10,30+cos(a*0.6)*20
+boxf hc+16,vc,hc+31,vc+15
+hc=hc+32
+if hc>640 {
+	vc=vc+16
+	if check==0 {
+		check=1
+		hc=h-16
+	} else {
+		check=0
+		hc=h
+	}
+}
+if vc>480 {
+	goto *fmscat
+}
+goto *checker
+
+*fmscat
+color 102-sin(a*0.7)*50,205-cos(a*0.7)*50,205+sin(a*0.7)*50
+
+repeat 3,-1
+
+;f
+line 320-cos(spinf)*270,200-sin(spinf)*27*0.60+cnt,320-cos(spinf)*210,200-sin(spinf)*21*0.60+cnt
+line 320-cos(spinf)*270,210-sin(spinf)*27*0.45+cnt,320-cos(spinf)*210,210-sin(spinf)*21*0.45+cnt
+line 320-cos(spinf)*270,220-sin(spinf)*27*0.30+cnt,320-cos(spinf)*250,220-sin(spinf)*25*0.30+cnt
+line 320-cos(spinf)*270,230-sin(spinf)*27*0.15+cnt,320-cos(spinf)*250,230-sin(spinf)*25*0.15+cnt
+line 320-cos(spinf)*270,240-sin(spinf)*27*0.00+cnt,320-cos(spinf)*210,240-sin(spinf)*21*0.00+cnt
+line 320-cos(spinf)*270,250+sin(spinf)*27*0.15+cnt,320-cos(spinf)*210,250+sin(spinf)*21*0.15+cnt
+line 320-cos(spinf)*270,260+sin(spinf)*27*0.30+cnt,320-cos(spinf)*250,260+sin(spinf)*25*0.30+cnt
+line 320-cos(spinf)*270,270+sin(spinf)*27*0.45+cnt,320-cos(spinf)*250,270+sin(spinf)*25*0.45+cnt
+line 320-cos(spinf)*270,280+sin(spinf)*27*0.60+cnt,320-cos(spinf)*250,280+sin(spinf)*25*0.60+cnt
+
+;m
+line 320-cos(spinm)*190,200-sin(spinm)*19*0.60+cnt,320-cos(spinm)*130,200-sin(spinm)*13*0.60+cnt
+line 320-cos(spinm)*190,210-sin(spinm)*19*0.45+cnt,320-cos(spinm)*130,210-sin(spinm)*13*0.45+cnt
+line 320-cos(spinm)*190,220-sin(spinm)*19*0.30+cnt,320-cos(spinm)*130,220-sin(spinm)*13*0.30+cnt
+line 320-cos(spinm)*190,230-sin(spinm)*19*0.15+cnt,320-cos(spinm)*173,230-sin(spinm)*17.3*0.15+cnt
+line 320-cos(spinm)*167,230-sin(spinm)*16.7*0.15+cnt,320-cos(spinm)*153,230-sin(spinm)*15.3*0.15+cnt
+line 320-cos(spinm)*147,230-sin(spinm)*14.7*0.15+cnt,320-cos(spinm)*130,230-sin(spinm)*13*0.15+cnt
+line 320-cos(spinm)*190,240-sin(spinm)*19*0.00+cnt,320-cos(spinm)*173,240-sin(spinm)*17.3*0.00+cnt
+line 320-cos(spinm)*167,240-sin(spinm)*16.7*0.00+cnt,320-cos(spinm)*153,240-sin(spinm)*15.3*0.00+cnt
+line 320-cos(spinm)*147,240-sin(spinm)*14.7*0.00+cnt,320-cos(spinm)*130,240-sin(spinm)*13*0.00+cnt
+line 320-cos(spinm)*190,250+sin(spinm)*19*0.15+cnt,320-cos(spinm)*173,250+sin(spinm)*17.3*0.15+cnt
+line 320-cos(spinm)*167,250+sin(spinm)*16.7*0.15+cnt,320-cos(spinm)*153,250+sin(spinm)*15.3*0.15+cnt
+line 320-cos(spinm)*147,250+sin(spinm)*14.7*0.15+cnt,320-cos(spinm)*130,250+sin(spinm)*13*0.15+cnt
+line 320-cos(spinm)*190,260+sin(spinm)*19*0.30+cnt,320-cos(spinm)*173,260+sin(spinm)*17.3*0.30+cnt
+line 320-cos(spinm)*167,260+sin(spinm)*16.7*0.30+cnt,320-cos(spinm)*153,260+sin(spinm)*15.3*0.30+cnt
+line 320-cos(spinm)*147,260+sin(spinm)*14.7*0.30+cnt,320-cos(spinm)*130,260+sin(spinm)*13*0.30+cnt
+line 320-cos(spinm)*190,270+sin(spinm)*19*0.45+cnt,320-cos(spinm)*173,270+sin(spinm)*17.3*0.45+cnt
+line 320-cos(spinm)*167,270+sin(spinm)*16.7*0.45+cnt,320-cos(spinm)*153,270+sin(spinm)*15.3*0.45+cnt
+line 320-cos(spinm)*147,270+sin(spinm)*14.7*0.45+cnt,320-cos(spinm)*130,270+sin(spinm)*13*0.45+cnt
+line 320-cos(spinm)*190,280+sin(spinm)*19*0.60+cnt,320-cos(spinm)*173,280+sin(spinm)*17.3*0.60+cnt
+line 320-cos(spinm)*167,280+sin(spinm)*16.7*0.60+cnt,320-cos(spinm)*153,280+sin(spinm)*15.3*0.60+cnt
+line 320-cos(spinm)*147,280+sin(spinm)*14.7*0.60+cnt,320-cos(spinm)*130,280+sin(spinm)*13*0.60+cnt
+
+;s
+line 320-cos(spins)*110,200-sin(spins)*11*0.60+cnt,320-cos(spins)*50,200-sin(spins)*5*0.60+cnt
+line 320-cos(spins)*110,210-sin(spins)*11*0.45+cnt,320-cos(spins)*50,210-sin(spins)*5*0.45+cnt
+line 320-cos(spins)*110,220-sin(spins)*11*0.30+cnt,320-cos(spins)*90,220-sin(spins)*9*0.30+cnt
+line 320-cos(spins)*110,230-sin(spins)*11*0.15+cnt,320-cos(spins)*90,230-sin(spins)*9*0.15+cnt
+line 320-cos(spins)*110,240-sin(spins)*11*0.00+cnt,320-cos(spins)*50,240-sin(spins)*5*0.00+cnt
+line 320-cos(spins)*110,250+sin(spins)*11*0.15+cnt,320-cos(spins)*50,250+sin(spins)*5*0.15+cnt
+line 320-cos(spins)*70,260+sin(spins)*7*0.30+cnt,320-cos(spins)*50,260+sin(spins)*5*0.30+cnt
+line 320-cos(spins)*110,270+sin(spins)*11*0.45+cnt,320-cos(spins)*50,270+sin(spins)*5*0.45+cnt
+line 320-cos(spins)*110,280+sin(spins)*11*0.60+cnt,320-cos(spins)*50,280+sin(spins)*5*0.60+cnt
+
+;_
+line 320-cos(spinu)*30,270+sin(spinu)*3*0.45+cnt,320+cos(spinu)*30,270-sin(spinu)*3*0.45+cnt
+line 320-cos(spinu)*30,280+sin(spinu)*3*0.60+cnt,320+cos(spinu)*30,280-sin(spinu)*3*0.60+cnt
+
+;c
+line 320+cos(spinc)*50,200+sin(spinc)*5*0.60+cnt,320+cos(spinc)*110,200+sin(spinc)*11*0.60+cnt
+line 320+cos(spinc)*50,210+sin(spinc)*5*0.45+cnt,320+cos(spinc)*110,210+sin(spinc)*11*0.45+cnt
+line 320+cos(spinc)*50,220+sin(spinc)*5*0.30+cnt,320+cos(spinc)*70,220+sin(spinc)*7*0.30+cnt
+line 320+cos(spinc)*50,230+sin(spinc)*5*0.15+cnt,320+cos(spinc)*70,230+sin(spinc)*7*0.15+cnt
+line 320+cos(spinc)*50,240+sin(spinc)*5*0.00+cnt,320+cos(spinc)*70,240+sin(spinc)*7*0.00+cnt
+line 320+cos(spinc)*50,250-sin(spinc)*5*0.15+cnt,320+cos(spinc)*70,250-sin(spinc)*7*0.15+cnt
+line 320+cos(spinc)*50,260-sin(spinc)*5*0.30+cnt,320+cos(spinc)*70,260-sin(spinc)*7*0.30+cnt
+line 320+cos(spinc)*50,270-sin(spinc)*5*0.45+cnt,320+cos(spinc)*110,270-sin(spinc)*11*0.45+cnt
+line 320+cos(spinc)*50,280-sin(spinc)*5*0.60+cnt,320+cos(spinc)*110,280-sin(spinc)*11*0.60+cnt
+
+;a
+line 320+cos(spina)*130,200+sin(spina)*13*0.60+cnt,320+cos(spina)*190,200+sin(spina)*19*0.60+cnt
+line 320+cos(spina)*130,210+sin(spina)*13*0.45+cnt,320+cos(spina)*190,210+sin(spina)*19*0.45+cnt
+line 320+cos(spina)*170,220+sin(spina)*17*0.30+cnt,320+cos(spina)*190,220+sin(spina)*19*0.30+cnt
+line 320+cos(spina)*130,230+sin(spina)*13*0.15+cnt,320+cos(spina)*190,230+sin(spina)*19*0.15+cnt
+line 320+cos(spina)*130,240+sin(spina)*13*0.00+cnt,320+cos(spina)*190,240+sin(spina)*19*0.00+cnt
+line 320+cos(spina)*130,250-sin(spina)*13*0.15+cnt,320+cos(spina)*150,250-sin(spina)*15*0.15+cnt
+line 320+cos(spina)*170,250-sin(spina)*17*0.15+cnt,320+cos(spina)*190,250-sin(spina)*19*0.15+cnt
+line 320+cos(spina)*130,260-sin(spina)*13*0.30+cnt,320+cos(spina)*150,260-sin(spina)*15*0.30+cnt
+line 320+cos(spina)*170,260-sin(spina)*17*0.30+cnt,320+cos(spina)*190,260-sin(spina)*19*0.30+cnt
+line 320+cos(spina)*130,270-sin(spina)*13*0.45+cnt,320+cos(spina)*190,270-sin(spina)*19*0.45+cnt
+line 320+cos(spina)*130,280-sin(spina)*13*0.60+cnt,320+cos(spina)*190,280-sin(spina)*19*0.60+cnt
+
+;t
+line 320+cos(spint)*210,200+sin(spint)*21*0.60+cnt,320+cos(spint)*230,200+sin(spint)*23*0.60+cnt
+line 320+cos(spint)*210,210+sin(spint)*21*0.45+cnt,320+cos(spint)*230,210+sin(spint)*23*0.45+cnt
+line 320+cos(spint)*210,220+sin(spint)*21*0.30+cnt,320+cos(spint)*270,220+sin(spint)*27*0.30+cnt
+line 320+cos(spint)*210,230+sin(spint)*21*0.15+cnt,320+cos(spint)*270,230+sin(spint)*27*0.15+cnt
+line 320+cos(spint)*210,240+sin(spint)*21*0.00+cnt,320+cos(spint)*230,240+sin(spint)*23*0.00+cnt
+line 320+cos(spint)*210,250-sin(spint)*21*0.15+cnt,320+cos(spint)*230,250-sin(spint)*23*0.15+cnt
+line 320+cos(spint)*210,260-sin(spint)*21*0.30+cnt,320+cos(spint)*230,260-sin(spint)*23*0.30+cnt
+line 320+cos(spint)*210,270-sin(spint)*21*0.45+cnt,320+cos(spint)*270,270-sin(spint)*27*0.45+cnt
+line 320+cos(spint)*210,280-sin(spint)*21*0.60+cnt,320+cos(spint)*270,280-sin(spint)*27*0.60+cnt
+
+loop
+
+*meiji
+repeat 3
+color 150+sin(a*4.1)*100,80-sin(a*4.1)*30,180-sin(a*4.1)*70
+pos 220-5+sin(a*1.1)*9+cnt,120+sin(a*2.4)*20
+mes "M"
+pos 240-5+sin(a*1.1-0.25)*9+cnt,120+sin(a*2.4-0.25)*20
+mes "E"
+pos 260-5+sin(a*1.1-0.5)*9+cnt,120+sin(a*2.4-0.5)*20
+mes "I"
+pos 280-5+sin(a*1.1-0.75)*9+cnt,120+sin(a*2.4-0.75)*20
+mes "J"
+pos 300-5+sin(a*1.1-1)*9+cnt,120+sin(a*2.4-1)*20
+mes "I"
+pos 340-5+sin(a*1.1-1.25)*9+cnt,120+sin(a*2.4-1.5)*20
+mes "U"
+pos 360-5+sin(a*1.1-1.5)*9+cnt,120+sin(a*2.4-1.75)*20
+mes "N"
+pos 380-5+sin(a*1.1-1.75)*9+cnt,120+sin(a*2.4-2)*20
+mes "I"
+pos 400-5+sin(a*1.1-2)*9+cnt,120+sin(a*2.4-2.25)*20
+mes "V"
+pos 420-5+sin(a*1.1-2.25)*9+cnt,120+sin(a*2.4-2.5)*20
+mes "."
+loop
+
+*press
+repeat 3
+color 150+sin(a*4.1)*100,80-sin(a*4.1)*30,180-sin(a*4.1)*70
+pos 220-5+sin(a*1.1)*9+cnt,360+sin(a*2.4)*20
+mes "P"
+pos 240-5+sin(a*1.1-0.25)*9+cnt,360+sin(a*2.4-0.25)*20
+mes "R"
+pos 260-5+sin(a*1.1-0.5)*9+cnt,360+sin(a*2.4-0.5)*20
+mes "E"
+pos 280-5+sin(a*1.1-0.75)*9+cnt,360+sin(a*2.4-0.75)*20
+mes "S"
+pos 300-5+sin(a*1.1-1)*9+cnt,360+sin(a*2.4-1)*20
+mes "S"
+pos 340-5+sin(a*1.1-1.25)*9+cnt,360+sin(a*2.4-1.5)*20
+mes "E"
+pos 360-5+sin(a*1.1-1.5)*9+cnt,360+sin(a*2.4-1.75)*20
+mes "N"
+pos 380-5+sin(a*1.1-1.75)*9+cnt,360+sin(a*2.4-2)*20
+mes "T"
+pos 400-5+sin(a*1.1-2)*9+cnt,360+sin(a*2.4-2.25)*20
+mes "E"
+pos 420-5+sin(a*1.1-2.25)*9+cnt,360+sin(a*2.4-2.5)*20
+mes "R"
+loop
+
+redraw 1
+await 10
+
+goto *start
+
+*nex

@@ -1,0 +1,12 @@
+*start
+#include "v13init.hsp"
+repeat
+redraw 0
+#include "v13.hsp"
+redraw 1
+await 10
+stick tr
+if tr==32 {
+	goto *start
+}
+loop

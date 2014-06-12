@@ -1,0 +1,55 @@
+v04r=v04r-0.08
+
+v04cha=v04cha+1
+if v04cha>=4{
+	v04sp=v04sp+1
+	v04cha=0
+}
+
+v04ax=320/v04sp+sin(v04r)*180/v04sp
+v04ay=120/v04sp+cos(v04r)*30/v04sp
+v04bx=320/v04sp+sin(v04r+m_pi*0.5)*180/v04sp
+v04by=120/v04sp+cos(v04r+m_pi*0.5)*30/v04sp
+v04cx=320/v04sp+sin(v04r+m_pi)*180/v04sp
+v04cy=120/v04sp+cos(v04r+m_pi)*30/v04sp
+v04dx=320/v04sp+sin(v04r+m_pi*1.5)*180/v04sp
+v04dy=120/v04sp+cos(v04r+m_pi*1.5)*30/v04sp
+v04ex=320/v04sp+sin(v04r)*180/v04sp
+v04ey=360/v04sp+cos(v04r)*30/v04sp
+v04fx=320/v04sp+sin(v04r+m_pi*0.5)*180/v04sp
+v04fy=360/v04sp+cos(v04r+m_pi*0.5)*30/v04sp
+v04gx=320/v04sp+sin(v04r+m_pi)*180/v04sp
+v04gy=360/v04sp+cos(v04r+m_pi)*30/v04sp
+v04hx=320/v04sp+sin(v04r+m_pi*1.5)*180/v04sp
+v04hy=360/v04sp+cos(v04r+m_pi*1.5)*30/v04sp
+
+color 0,0,0
+boxf
+
+v04rep=0.0
+*v04v
+repeat v04sp
+v04re=cnt*640/v04sp
+color 24,24,24
+boxf 2+v04re,2+v04rep,v04re+640/v04sp-2,v04rep+480/v04sp-2
+color 255,155,205
+line v04ax+v04re,v04ay+v04rep,v04bx+v04re,v04by+v04rep
+line v04bx+v04re,v04by+v04rep,v04cx+v04re,v04cy+v04rep
+line v04cx+v04re,v04cy+v04rep,v04dx+v04re,v04dy+v04rep
+line v04dx+v04re,v04dy+v04rep,v04ax+v04re,v04ay+v04rep
+line v04ex+v04re,v04ey+v04rep,v04fx+v04re,v04fy+v04rep
+line v04fx+v04re,v04fy+v04rep,v04gx+v04re,v04gy+v04rep
+line v04gx+v04re,v04gy+v04rep,v04hx+v04re,v04hy+v04rep
+line v04hx+v04re,v04hy+v04rep,v04ex+v04re,v04ey+v04rep
+line v04ax+v04re,v04ay+v04rep,v04ex+v04re,v04ey+v04rep
+line v04bx+v04re,v04by+v04rep,v04fx+v04re,v04fy+v04rep
+line v04cx+v04re,v04cy+v04rep,v04gx+v04re,v04gy+v04rep
+line v04dx+v04re,v04dy+v04rep,v04hx+v04re,v04hy+v04rep
+loop
+v04rep=v04rep+480/v04sp
+if v04rep>=480 {
+	goto *v04end
+}
+goto *v04v
+
+*v04end

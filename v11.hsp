@@ -1,0 +1,25 @@
+color 0,0,0
+boxf
+
+v11t=v11t+0.2
+v11re=0.0
+
+*v11rep
+	color 255,128+127.0*sin(v11t+v11f*((v11re\33)-int(v11re/33))),180+75.0*sin(v11t+v11f*((v11re\33)-int(v11re/33)))
+if v11sw==1 {
+	v11x=(v11re\33)*20+sin(v11t+v11f*((v11re\33)-int(v11re/33)))*15
+	v11y=int(v11re/33)*20-sin(v11t+v11f*((v11re\33)-int(v11re/33)))*15
+} else {
+	v11x=640-(v11re\33)*20-sin(v11t+v11f*((v11re\33)-int(v11re/33)))*15
+	v11y=int(v11re/33)*20-sin(v11t+v11f*((v11re\33)-int(v11re/33)))*15
+}
+v11r=1
+boxf v11x-v11r,v11y-v11r,v11x+v11r,v11y+v11r
+
+v11re=v11re+1.0
+if v11re>=825 {
+	goto *v11end
+}
+goto *v11rep
+
+*v11end

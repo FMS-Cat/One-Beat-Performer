@@ -1,0 +1,53 @@
+v00r=v00r+0.04
+v00s=v00s/1.1
+v00ax=320+sin(v00r)*180
+v00ay=120+cos(v00r)*30+v00s
+v00bx=320+sin(v00r+m_pi*0.5)*180
+v00by=120+cos(v00r+m_pi*0.5)*30+v00s
+v00cx=320+sin(v00r+m_pi)*180
+v00cy=120+cos(v00r+m_pi)*30+v00s
+v00dx=320+sin(v00r+m_pi*1.5)*180
+v00dy=120+cos(v00r+m_pi*1.5)*30+v00s
+v00ex=320+sin(v00r)*180
+v00ey=360+cos(v00r)*30-v00s
+v00fx=320+sin(v00r+m_pi*0.5)*180
+v00fy=360+cos(v00r+m_pi*0.5)*30-v00s
+v00gx=320+sin(v00r+m_pi)*180
+v00gy=360+cos(v00r+m_pi)*30-v00s
+v00hx=320+sin(v00r+m_pi*1.5)*180
+v00hy=360+cos(v00r+m_pi*1.5)*30-v00s
+
+color 0,0,0
+boxf
+
+v00clr=v00clr/1.04
+repeat 8
+color v00clr*2*cnt*10,0,v00clr*cnt*5
+boxf 2+cnt*80,2,77+cnt*80,77
+color v00clr*2*(cnt+1)*10,0,v00clr*(cnt+1)*5
+boxf 2+cnt*80,82,77+cnt*80,157
+color v00clr*2*(cnt+2)*10,0,v00clr*(cnt+2)*5
+boxf 2+cnt*80,162,77+cnt*80,237
+color v00clr*2*(cnt+3)*10,0,v00clr*(cnt+3)*5
+boxf 2+cnt*80,242,77+cnt*80,317
+color v00clr*2*(cnt+4)*10,0,v00clr*(cnt+4)*5
+boxf 2+cnt*80,322,77+cnt*80,397
+color v00clr*2*(cnt+5)*10,0,v00clr*(cnt+5)*5
+boxf 2+cnt*80,402,77+cnt*80,477
+loop
+
+repeat 1
+color 255,255,255
+line v00ax+cnt,v00ay,v00bx+cnt,v00by
+line v00bx+cnt,v00by,v00cx+cnt,v00cy
+line v00cx+cnt,v00cy,v00dx+cnt,v00dy
+line v00dx+cnt,v00dy,v00ax+cnt,v00ay
+line v00ex+cnt,v00ey,v00fx+cnt,v00fy
+line v00fx+cnt,v00fy,v00gx+cnt,v00gy
+line v00gx+cnt,v00gy,v00hx+cnt,v00hy
+line v00hx+cnt,v00hy,v00ex+cnt,v00ey
+line v00ax+cnt,v00ay,v00ex+cnt,v00ey
+line v00bx+cnt,v00by,v00fx+cnt,v00fy
+line v00cx+cnt,v00cy,v00gx+cnt,v00gy
+line v00dx+cnt,v00dy,v00hx+cnt,v00hy
+loop

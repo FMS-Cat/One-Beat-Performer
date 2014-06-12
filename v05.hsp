@@ -1,0 +1,68 @@
+v05a=v05a*0.9
+
+v05te=v05te+(0.02)*v05a
+v05tm=v05tm-(0.03)*v05a
+v05to1=v05to1+(0.004)*v05a
+v05to2=v05to2-(0.003)*v05a
+v05to3=v05to3-(0.006)*v05a
+v05to4=v05to4+(0.004)*v05a
+v05to5=v05to5-(0.007)*v05a
+v05to6=v05to6+(0.005)*v05a
+v05to7=v05to7-(0.002)*v05a
+v05to8=v05to8+(0.007)*v05a
+
+color 0,0,0
+boxf
+
+color 255,0,102:circle 320+sin(v05te)*v05re-v05rm-1,240+cos(v05te)*v05re-v05rm-1,320+sin(v05te)*v05re+v05rm+1,240+cos(v05te)*v05re+v05rm+1
+color 0,0,0:circle 320+sin(v05te)*v05re-v05rm,240+cos(v05te)*v05re-v05rm,320+sin(v05te)*v05re+v05rm,240+cos(v05te)*v05re+v05rm
+repeat 32
+color 255,0,102:line 320+sin(m_pi/16*(cnt-1))*v05re,240+cos(m_pi/16*(cnt-1))*v05re,320+sin(m_pi/16*cnt)*v05re,240+cos(m_pi/16*cnt)*v05re
+loop
+
+color 255,0,102
+circle 320+sin(v05to1)*v05ro1-2,240+cos(v05to1)*v05ro1-2,320+sin(v05to1)*v05ro1+2,240+cos(v05to1)*v05ro1+2
+circle 320+sin(v05to1+m_pi)*v05ro1-2,240+cos(v05to1+m_pi)*v05ro1-2,320+sin(v05to1+m_pi)*v05ro1+2,240+cos(v05to1+m_pi)*v05ro1+2
+circle 320+sin(v05to2)*v05ro2-3,240+cos(v05to2)*v05ro2-3,320+sin(v05to2)*v05ro2+3,240+cos(v05to2)*v05ro2+3
+circle 320+sin(v05to2+m_pi)*v05ro2-3,240+cos(v05to2+m_pi)*v05ro2-3,320+sin(v05to2+m_pi)*v05ro2+3,240+cos(v05to2+m_pi)*v05ro2+3
+circle 320+sin(v05to3)*v05ro3-4,240+cos(v05to3)*v05ro3-4,320+sin(v05to3)*v05ro3+4,240+cos(v05to3)*v05ro3+4
+circle 320+sin(v05to3+m_pi)*v05ro3-4,240+cos(v05to3+m_pi)*v05ro3-4,320+sin(v05to3+m_pi)*v05ro3+4,240+cos(v05to3+m_pi)*v05ro3+4
+line 320+sin(v05to4)*v05ro4-3,240+cos(v05to4)*v05ro4,320+sin(v05to4)*v05ro4+2,240+cos(v05to4)*v05ro4
+line 320+sin(v05to4)*v05ro4,240+cos(v05to4)*v05ro4-3,320+sin(v05to4)*v05ro4,240+cos(v05to4)*v05ro4+2
+line 320+sin(v05to4+m_pi)*v05ro4-3,240+cos(v05to4+m_pi)*v05ro4,320+sin(v05to4+m_pi)*v05ro4+2,240+cos(v05to4+m_pi)*v05ro4
+line 320+sin(v05to4+m_pi)*v05ro4,240+cos(v05to4+m_pi)*v05ro4-3,320+sin(v05to4+m_pi)*v05ro4,240+cos(v05to4+m_pi)*v05ro4+2
+line 320+sin(v05to5)*v05ro5-4,240+cos(v05to5)*v05ro5,320+sin(v05to5)*v05ro5+3,240+cos(v05to5)*v05ro5
+line 320+sin(v05to5)*v05ro5,240+cos(v05to5)*v05ro5-4,320+sin(v05to5)*v05ro5,240+cos(v05to5)*v05ro5+3
+line 320+sin(v05to5+m_pi)*v05ro5-4,240+cos(v05to5+m_pi)*v05ro5,320+sin(v05to5+m_pi)*v05ro5+3,240+cos(v05to5+m_pi)*v05ro5
+line 320+sin(v05to5+m_pi)*v05ro5,240+cos(v05to5+m_pi)*v05ro5-4,320+sin(v05to5+m_pi)*v05ro5,240+cos(v05to5+m_pi)*v05ro5+3
+line 320+sin(v05to6)*v05ro6,240+cos(v05to6)*v05ro6-3,320+sin(v05to6)*v05ro6+3,240+cos(v05to6)*v05ro6
+line 320+sin(v05to6)*v05ro6,240+cos(v05to6)*v05ro6+3,320+sin(v05to6)*v05ro6-3,240+cos(v05to6)*v05ro6
+line 320+sin(v05to6)*v05ro6-3,240+cos(v05to6)*v05ro6,320+sin(v05to6)*v05ro6,240+cos(v05to6)*v05ro6-3
+line 320+sin(v05to6)*v05ro6+3,240+cos(v05to6)*v05ro6,320+sin(v05to6)*v05ro6,240+cos(v05to6)*v05ro6+3
+line 320+sin(v05to6+m_pi)*v05ro6,240+cos(v05to6+m_pi)*v05ro6-3,320+sin(v05to6+m_pi)*v05ro6+3,240+cos(v05to6+m_pi)*v05ro6
+line 320+sin(v05to6+m_pi)*v05ro6,240+cos(v05to6+m_pi)*v05ro6+3,320+sin(v05to6+m_pi)*v05ro6-3,240+cos(v05to6+m_pi)*v05ro6
+line 320+sin(v05to6+m_pi)*v05ro6-3,240+cos(v05to6+m_pi)*v05ro6,320+sin(v05to6+m_pi)*v05ro6,240+cos(v05to6+m_pi)*v05ro6-3
+line 320+sin(v05to6+m_pi)*v05ro6+3,240+cos(v05to6+m_pi)*v05ro6,320+sin(v05to6+m_pi)*v05ro6,240+cos(v05to6+m_pi)*v05ro6+3
+line 320+sin(v05to7)*v05ro7,240+cos(v05to7)*v05ro7-4,320+sin(v05to7)*v05ro7+4,240+cos(v05to7)*v05ro7
+line 320+sin(v05to7)*v05ro7,240+cos(v05to7)*v05ro7+4,320+sin(v05to7)*v05ro7-4,240+cos(v05to7)*v05ro7
+line 320+sin(v05to7)*v05ro7-4,240+cos(v05to7)*v05ro7,320+sin(v05to7)*v05ro7,240+cos(v05to7)*v05ro7-4
+line 320+sin(v05to7)*v05ro7+4,240+cos(v05to7)*v05ro7,320+sin(v05to7)*v05ro7,240+cos(v05to7)*v05ro7+4
+line 320+sin(v05to7+m_pi)*v05ro7,240+cos(v05to7+m_pi)*v05ro7-4,320+sin(v05to7+m_pi)*v05ro7+4,240+cos(v05to7+m_pi)*v05ro7
+line 320+sin(v05to7+m_pi)*v05ro7,240+cos(v05to7+m_pi)*v05ro7+4,320+sin(v05to7+m_pi)*v05ro7-4,240+cos(v05to7+m_pi)*v05ro7
+line 320+sin(v05to7+m_pi)*v05ro7-4,240+cos(v05to7+m_pi)*v05ro7,320+sin(v05to7+m_pi)*v05ro7,240+cos(v05to7+m_pi)*v05ro7-4
+line 320+sin(v05to7+m_pi)*v05ro7+4,240+cos(v05to7+m_pi)*v05ro7,320+sin(v05to7+m_pi)*v05ro7,240+cos(v05to7+m_pi)*v05ro7+4
+line 320+sin(v05to8)*v05ro8-3,240+cos(v05to8)*v05ro8-3,320+sin(v05to8)*v05ro8-3,240+cos(v05to8)*v05ro8+3
+line 320+sin(v05to8)*v05ro8-3,240+cos(v05to8)*v05ro8+3,320+sin(v05to8)*v05ro8+3,240+cos(v05to8)*v05ro8+3
+line 320+sin(v05to8)*v05ro8+3,240+cos(v05to8)*v05ro8+3,320+sin(v05to8)*v05ro8+3,240+cos(v05to8)*v05ro8-3
+line 320+sin(v05to8)*v05ro8+3,240+cos(v05to8)*v05ro8-3,320+sin(v05to8)*v05ro8-3,240+cos(v05to8)*v05ro8-3
+line 320+sin(v05to8+m_pi)*v05ro8-3,240+cos(v05to8+m_pi)*v05ro8-3,320+sin(v05to8+m_pi)*v05ro8-3,240+cos(v05to8+m_pi)*v05ro8+3
+line 320+sin(v05to8+m_pi)*v05ro8-3,240+cos(v05to8+m_pi)*v05ro8+3,320+sin(v05to8+m_pi)*v05ro8+3,240+cos(v05to8+m_pi)*v05ro8+3
+line 320+sin(v05to8+m_pi)*v05ro8+3,240+cos(v05to8+m_pi)*v05ro8+3,320+sin(v05to8+m_pi)*v05ro8+3,240+cos(v05to8+m_pi)*v05ro8-3
+line 320+sin(v05to8+m_pi)*v05ro8+3,240+cos(v05to8+m_pi)*v05ro8-3,320+sin(v05to8+m_pi)*v05ro8-3,240+cos(v05to8+m_pi)*v05ro8-3
+
+color 255,255,255
+circle 320-v05vs,240-v05vs,320+v05vs,240+v05vs
+circle 320-v05ve+sin(v05te)*v05re,240-v05ve+cos(v05te)*v05re,320+v05ve+sin(v05te)*v05re,240+v05ve+cos(v05te)*v05re
+circle 320-v05vm+sin(v05te)*v05re+sin(v05tm)*v05rm,240-v05vm+cos(v05te)*v05re+cos(v05tm)*v05rm,320+v05vm+sin(v05te)*v05re+sin(v05tm)*v05rm,240+v05vm+cos(v05te)*v05re+cos(v05tm)*v05rm
+line 320,240,320+sin(v05te)*v05re,240+cos(v05te)*v05re
+line 320+sin(v05te)*v05re,240+cos(v05te)*v05re,320+sin(v05te)*v05re+sin(v05tm)*v05rm,240+cos(v05te)*v05re+cos(v05tm)*v05rm

@@ -1,0 +1,7 @@
+repeat 90
+v12f(cnt)=m_pi/45*cnt
+loop
+v12f(90)=v12f(0)
+v12dec=50.0
+v12mul=0.2
+v12ir=30.0

@@ -1,0 +1,38 @@
+v10a=v10a*0.92+0.05
+
+color 0,0,0
+boxf
+
+v10t=v10t+0.0073*v10a
+
+v10re=0.0
+*v10rep
+color 255,0+v10re*15,90+v10re*10:v10tc=v10t+v10re*0.04:gosub *v10tri
+v10re=v10re+1
+if v10re==16 {
+	goto *v10end
+}
+goto *v10rep
+
+*v10tri
+v10ax=320+sin(v10tc*2.02)*330
+v10ay=240+cos(v10tc*1.76)*279
+v10bx=320+sin(v10tc*1.43+4)*302
+v10by=240+cos(v10tc*1.77+4)*256
+v10cx=320+sin(v10tc*1.46+2)*247
+v10cy=240+cos(v10tc*2.32+2)*202
+line v10ax,v10ay,v10bx,v10by
+line 640-v10ax,480-v10ay,640-v10bx,480-v10by
+line v10bx,v10by,v10cx,v10cy
+line 640-v10bx,480-v10by,640-v10cx,480-v10cy
+line v10cx,v10cy,v10ax,v10ay
+line 640-v10cx,480-v10cy,640-v10ax,480-v10ay
+circle v10ax-3,v10ay-3,v10ax+3,v10ay+3
+circle 640-v10ax-3,480-v10ay-3,640-v10ax+3,480-v10ay+3
+circle v10bx-3,v10by-3,v10bx+3,v10by+3
+circle 640-v10bx-3,480-v10by-3,640-v10bx+3,480-v10by+3
+circle v10cx-3,v10cy-3,v10cx+3,v10cy+3
+circle 640-v10cx-3,480-v10cy-3,640-v10cx+3,480-v10cy+3
+return
+
+*v10end
